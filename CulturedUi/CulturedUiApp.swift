@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct CulturedUiApp: App {
+    
+    @StateObject private var vm = DestinationsViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DestinationsView()
+                .environmentObject(vm)
         }
     }
 }

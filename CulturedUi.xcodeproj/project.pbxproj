@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A4C099C2A1E93810052B582 /* UserLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C099B2A1E93810052B582 /* UserLocationManager.swift */; };
 		1AB818C42A1547AE006E99A8 /* CulturedUiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB818C32A1547AE006E99A8 /* CulturedUiApp.swift */; };
 		1AB818C62A1547AE006E99A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB818C52A1547AE006E99A8 /* ContentView.swift */; };
 		1AB818C82A1547AF006E99A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AB818C72A1547AF006E99A8 /* Assets.xcassets */; };
@@ -14,6 +15,12 @@
 		1AB818D62A1547AF006E99A8 /* CulturedUiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB818D52A1547AF006E99A8 /* CulturedUiTests.swift */; };
 		1AB818E02A1547AF006E99A8 /* CulturedUiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB818DF2A1547AF006E99A8 /* CulturedUiUITests.swift */; };
 		1AB818E22A1547AF006E99A8 /* CulturedUiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB818E12A1547AF006E99A8 /* CulturedUiUITestsLaunchTests.swift */; };
+		1AB818EF2A154939006E99A8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB818EE2A154939006E99A8 /* MapView.swift */; };
+		1AB818F22A155F83006E99A8 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB818F12A155F83006E99A8 /* Models.swift */; };
+		1AB818F62A170BFF006E99A8 /* DestinationDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB818F52A170BFF006E99A8 /* DestinationDataService.swift */; };
+		1AB818F82A17A883006E99A8 /* DestinationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB818F72A17A883006E99A8 /* DestinationsView.swift */; };
+		1AB818FB2A17B954006E99A8 /* DestinationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB818FA2A17B954006E99A8 /* DestinationsViewModel.swift */; };
+		1AB818FD2A17F73A006E99A8 /* DropMenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB818FC2A17F73A006E99A8 /* DropMenuListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A4C099B2A1E93810052B582 /* UserLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationManager.swift; sourceTree = "<group>"; };
 		1AB818C02A1547AE006E99A8 /* CulturedUi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CulturedUi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB818C32A1547AE006E99A8 /* CulturedUiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CulturedUiApp.swift; sourceTree = "<group>"; };
 		1AB818C52A1547AE006E99A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +53,12 @@
 		1AB818DB2A1547AF006E99A8 /* CulturedUiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CulturedUiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB818DF2A1547AF006E99A8 /* CulturedUiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CulturedUiUITests.swift; sourceTree = "<group>"; };
 		1AB818E12A1547AF006E99A8 /* CulturedUiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CulturedUiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1AB818EE2A154939006E99A8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		1AB818F12A155F83006E99A8 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		1AB818F52A170BFF006E99A8 /* DestinationDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationDataService.swift; sourceTree = "<group>"; };
+		1AB818F72A17A883006E99A8 /* DestinationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationsView.swift; sourceTree = "<group>"; };
+		1AB818FA2A17B954006E99A8 /* DestinationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationsViewModel.swift; sourceTree = "<group>"; };
+		1AB818FC2A17F73A006E99A8 /* DropMenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropMenuListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +86,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A4C099D2A1E938F0052B582 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1A4C099B2A1E93810052B582 /* UserLocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		1AB818B72A1547AE006E99A8 = {
 			isa = PBXGroup;
 			children = (
+				1A4C099D2A1E938F0052B582 /* Managers */,
 				1AB818C22A1547AE006E99A8 /* CulturedUi */,
 				1AB818D42A1547AF006E99A8 /* CulturedUiTests */,
 				1AB818DE2A1547AF006E99A8 /* CulturedUiUITests */,
@@ -96,7 +119,9 @@
 			isa = PBXGroup;
 			children = (
 				1AB818C32A1547AE006E99A8 /* CulturedUiApp.swift */,
-				1AB818C52A1547AE006E99A8 /* ContentView.swift */,
+				1AB818F42A170BC5006E99A8 /* DataServices */,
+				1AB818F02A15495D006E99A8 /* Views */,
+				1AB818CB2A1547AF006E99A8 /* Preview Assets.xcassets */,
 				1AB818C72A1547AF006E99A8 /* Assets.xcassets */,
 				1AB818C92A1547AF006E99A8 /* CulturedUi.entitlements */,
 				1AB818CA2A1547AF006E99A8 /* Preview Content */,
@@ -107,7 +132,6 @@
 		1AB818CA2A1547AF006E99A8 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				1AB818CB2A1547AF006E99A8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -127,6 +151,43 @@
 				1AB818E12A1547AF006E99A8 /* CulturedUiUITestsLaunchTests.swift */,
 			);
 			path = CulturedUiUITests;
+			sourceTree = "<group>";
+		};
+		1AB818F02A15495D006E99A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1AB818C52A1547AE006E99A8 /* ContentView.swift */,
+				1AB818EE2A154939006E99A8 /* MapView.swift */,
+				1AB818F72A17A883006E99A8 /* DestinationsView.swift */,
+				1AB818FC2A17F73A006E99A8 /* DropMenuListView.swift */,
+				1AB818F92A17B92E006E99A8 /* DestinationsViewModel */,
+				1AB818F32A155F8D006E99A8 /* Models */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1AB818F32A155F8D006E99A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1AB818F12A155F83006E99A8 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1AB818F42A170BC5006E99A8 /* DataServices */ = {
+			isa = PBXGroup;
+			children = (
+				1AB818F52A170BFF006E99A8 /* DestinationDataService.swift */,
+			);
+			path = DataServices;
+			sourceTree = "<group>";
+		};
+		1AB818F92A17B92E006E99A8 /* DestinationsViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1AB818FA2A17B954006E99A8 /* DestinationsViewModel.swift */,
+			);
+			path = DestinationsViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +320,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB818FB2A17B954006E99A8 /* DestinationsViewModel.swift in Sources */,
+				1AB818FD2A17F73A006E99A8 /* DropMenuListView.swift in Sources */,
 				1AB818C62A1547AE006E99A8 /* ContentView.swift in Sources */,
+				1AB818F82A17A883006E99A8 /* DestinationsView.swift in Sources */,
+				1AB818F62A170BFF006E99A8 /* DestinationDataService.swift in Sources */,
+				1AB818EF2A154939006E99A8 /* MapView.swift in Sources */,
 				1AB818C42A1547AE006E99A8 /* CulturedUiApp.swift in Sources */,
+				1AB818F22A155F83006E99A8 /* Models.swift in Sources */,
+				1A4C099C2A1E93810052B582 /* UserLocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +487,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need permission to determaine users location in order to complete activities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -457,6 +526,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need permission to determaine users location in order to complete activities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
