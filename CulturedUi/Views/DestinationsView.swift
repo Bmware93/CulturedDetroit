@@ -14,17 +14,57 @@ struct DestinationsView: View {
     @EnvironmentObject private var vm: DestinationsViewModel
     @StateObject private var locationManager = LocationManager()
 
-    
     var body: some View {
         ZStack {
             Map(coordinateRegion: $vm.mapRegion, interactionModes: .all, showsUserLocation: true,
-                userTrackingMode: .constant(.none))
+                userTrackingMode: .constant(.none), annotationItems: vm.destinations) {
+                destination in
+                MapAnnotation(coordinate: destination.clCoordinate) {
+                    VStack {
+                
+//                        Button {
+                            // if we tap on a business, pass the business to this property so our sheet will show
+                           //AnnotationView = destination
+//                        } label: {
+                            AnnotationView(destination: destination)
+//                        }
+//                        .buttonStyle(.borderless)
+//                        //.buttonBorderShape(.capsule)
+                        
+//                        Text(destination.name)
+//                            .font(.caption2)
+                            
+                    }
+                    
+                }
+
+            }
                 .ignoresSafeArea()
             
             VStack(spacing: 0) {
                 dropMenu
                     .padding()
                 Spacer()
+                
+            }
+            
+            VStack {
+                ForEach(vm.tasks) { task in
+                    Button {
+                        _Concurrency.Task {
+                            do {
+                                try await vm.businesses(searchingFor: task.searchTerm, at: vm.mapRegion.center)
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                           
+                        }
+                        
+                    } label: {
+                       Text(task.title)
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
             }
         }
     }
@@ -38,7 +78,6 @@ struct DestinationsView_Previews: PreviewProvider {
 }
 
 extension DestinationsView {
-    
     private var dropMenu: some View {
         VStack {
             Button(action: vm.toggleDistrictsList) {

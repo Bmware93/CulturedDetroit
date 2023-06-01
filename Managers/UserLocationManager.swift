@@ -39,7 +39,7 @@ extension LocationManager: CLLocationManagerDelegate {
 
 extension MKCoordinateRegion {
     static func detroitRegion() -> MKCoordinateRegion {
-        MKCoordinateRegion(center: DestinationDataService.destinations[0].coordinates, span: DestinationsViewModel.mapSpan)
+        MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.33164991655891 , longitude: -83.04692610496726), span: DestinationsViewModel.mapSpan)
     }
     
     func getBinding() -> Binding<MKCoordinateRegion>? {

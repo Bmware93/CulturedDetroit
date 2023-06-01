@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1A4C099C2A1E93810052B582 /* UserLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C099B2A1E93810052B582 /* UserLocationManager.swift */; };
+		1A4C099F2A213E7A0052B582 /* YelpFusionAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C099E2A213E7A0052B582 /* YelpFusionAPIService.swift */; };
+		1A4C09A12A213EB90052B582 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C09A02A213EB90052B582 /* APIKeys.swift */; };
+		1A4C09A32A291E9B0052B582 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C09A22A291E9B0052B582 /* AnnotationView.swift */; };
 		1AB818C42A1547AE006E99A8 /* CulturedUiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB818C32A1547AE006E99A8 /* CulturedUiApp.swift */; };
 		1AB818C62A1547AE006E99A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB818C52A1547AE006E99A8 /* ContentView.swift */; };
 		1AB818C82A1547AF006E99A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AB818C72A1547AF006E99A8 /* Assets.xcassets */; };
@@ -42,6 +45,9 @@
 
 /* Begin PBXFileReference section */
 		1A4C099B2A1E93810052B582 /* UserLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationManager.swift; sourceTree = "<group>"; };
+		1A4C099E2A213E7A0052B582 /* YelpFusionAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpFusionAPIService.swift; sourceTree = "<group>"; };
+		1A4C09A02A213EB90052B582 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		1A4C09A22A291E9B0052B582 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
 		1AB818C02A1547AE006E99A8 /* CulturedUi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CulturedUi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB818C32A1547AE006E99A8 /* CulturedUiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CulturedUiApp.swift; sourceTree = "<group>"; };
 		1AB818C52A1547AE006E99A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -160,6 +166,7 @@
 				1AB818EE2A154939006E99A8 /* MapView.swift */,
 				1AB818F72A17A883006E99A8 /* DestinationsView.swift */,
 				1AB818FC2A17F73A006E99A8 /* DropMenuListView.swift */,
+				1A4C09A22A291E9B0052B582 /* AnnotationView.swift */,
 				1AB818F92A17B92E006E99A8 /* DestinationsViewModel */,
 				1AB818F32A155F8D006E99A8 /* Models */,
 			);
@@ -178,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				1AB818F52A170BFF006E99A8 /* DestinationDataService.swift */,
+				1A4C099E2A213E7A0052B582 /* YelpFusionAPIService.swift */,
+				1A4C09A02A213EB90052B582 /* APIKeys.swift */,
 			);
 			path = DataServices;
 			sourceTree = "<group>";
@@ -320,10 +329,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A4C09A12A213EB90052B582 /* APIKeys.swift in Sources */,
+				1A4C09A32A291E9B0052B582 /* AnnotationView.swift in Sources */,
 				1AB818FB2A17B954006E99A8 /* DestinationsViewModel.swift in Sources */,
 				1AB818FD2A17F73A006E99A8 /* DropMenuListView.swift in Sources */,
 				1AB818C62A1547AE006E99A8 /* ContentView.swift in Sources */,
 				1AB818F82A17A883006E99A8 /* DestinationsView.swift in Sources */,
+				1A4C099F2A213E7A0052B582 /* YelpFusionAPIService.swift in Sources */,
 				1AB818F62A170BFF006E99A8 /* DestinationDataService.swift in Sources */,
 				1AB818EF2A154939006E99A8 /* MapView.swift in Sources */,
 				1AB818C42A1547AE006E99A8 /* CulturedUiApp.swift in Sources */,

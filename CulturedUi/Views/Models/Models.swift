@@ -21,17 +21,26 @@ struct District: Identifiable {
 
 }
 
-struct Destination: Identifiable {
-    let id = UUID()
+struct Destination: Identifiable, Codable {
+    var id: String
     let name: String
-    let coordinates: CLLocationCoordinate2D
-    let district: District
+    let coordinates: DestionationCoordinates
+    
+    var clCoordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
+    }
+}
+
+struct DestionationCoordinates: Codable {
+    var latitude: Double
+    var longitude: Double
 }
 
 
 struct Task: Identifiable {
     let id = UUID()
     let title: String
+    let searchTerm: String
     
 }
 
@@ -40,10 +49,6 @@ enum DistrictAreas: String, CaseIterable {
 }
 
 
-struct DowntownCoords {
-   static var latitude: Double = 42.333145
-    var longitude: Double = -83.049562
-        
-    }
+
 
 

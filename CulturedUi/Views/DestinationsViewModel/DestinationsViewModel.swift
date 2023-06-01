@@ -13,6 +13,7 @@ class DestinationsViewModel: ObservableObject {
     
     //All loaded locations
     @Published var destinations: [Destination]
+    @Published var tasks: [Task]
     
     @Published var districts:[District]
     
@@ -30,13 +31,23 @@ class DestinationsViewModel: ObservableObject {
     @Published var showDistrictsList: Bool = false
     
     init() {
-        let destinations = DestinationDataService.destinations
         let districts = DestinationDataService.districts
-        self.destinations = destinations
+        self.destinations = []
         self.districts = districts
         self.mapLocation = districts.first!
+        
+        self.tasks = [
+            Task(title: "Go get a scoop of Ice Cream", searchTerm: "Ice Cream"),
+            Task(title: "Check out a mural", searchTerm: "Mural")
+        ]
         self.updateMapRegion(district: districts.first!)
     }
+    
+    //Function that calls the API 
+    func businesses(searchingFor term: String, at location: CLLocationCoordinate2D) async throws {
+        self.destinations = try await YelpFusionAPIService().businesses(searchingFor: term, at: location)
+    }
+
     
     private func updateMapRegion(district: District) {
         withAnimation(.easeInOut) {
