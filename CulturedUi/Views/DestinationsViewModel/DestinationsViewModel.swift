@@ -14,6 +14,7 @@ class DestinationsViewModel: ObservableObject {
     //All loaded locations
     @Published var destinations: [Destination]
     @Published var tasks: [Task]
+    @Published var completedTasks: [Task] = []
     
     @Published var districts:[District]
     
@@ -30,6 +31,9 @@ class DestinationsViewModel: ObservableObject {
     //Show list of districts
     @Published var showDistrictsList: Bool = false
     
+    @Published var progress: Double = 100.0
+    @Published var selectedViewCategory: ViewCategories = .activities
+    
     init() {
         let districts = DestinationDataService.districts
         self.destinations = []
@@ -37,8 +41,11 @@ class DestinationsViewModel: ObservableObject {
         self.mapLocation = districts.first!
         
         self.tasks = [
-            Task(title: "Go get a scoop of Ice Cream", searchTerm: "Ice Cream"),
-            Task(title: "Check out a mural", searchTerm: "Mural")
+            Task(searchTerm: "Pizza", description: "Eat pizza from a local restaurant.", imageName: "nikisDetPizzaPic"),
+            Task(searchTerm: "Coffee", description: "Purchase a chai latte.", imageName: "lattePic"),
+            Task(searchTerm: "Seafood", description: "Try seafood dish.", imageName: "salmonDishPic"),
+            Task(searchTerm: "Riverwalk", description: "Enjoy a walk along the river.", imageName: "detWalkingPathPic"),
+
         ]
         self.updateMapRegion(district: districts.first!)
     }
@@ -66,6 +73,15 @@ class DestinationsViewModel: ObservableObject {
         withAnimation(.easeInOut) {
             mapLocation = district
             showDistrictsList = false
+        }
+    }
+    
+    func completeTask(task: Task) {
+        if let index = tasks.firstIndex(of: task) {
+            tasks.remove(at: index)
+            completedTasks.append(task)
+            progress = Double(completedTasks.count) / Double(completedTasks.count + tasks.count)
+            
         }
     }
 }

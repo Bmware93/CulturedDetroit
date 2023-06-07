@@ -27,7 +27,7 @@ struct DropMenuListView: View {
                 
             }
         }
-        .listStyle(PlainListStyle())
+        .listStyle(.inset)
     }
 }
 

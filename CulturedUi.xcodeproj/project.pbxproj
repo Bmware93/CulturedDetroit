@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A42B21E2A3118D700111344 /* BottomDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42B21D2A3118D700111344 /* BottomDrawerView.swift */; };
+		1A42B2202A3118EF00111344 /* SegmentedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42B21F2A3118EF00111344 /* SegmentedPickerView.swift */; };
+		1A42B2222A3119A900111344 /* ViewCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42B2212A3119A900111344 /* ViewCategory.swift */; };
+		1A42B2242A311A1D00111344 /* PendingTaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42B2232A311A1D00111344 /* PendingTaskListView.swift */; };
+		1A42B2262A311A7300111344 /* CompletedTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42B2252A311A7300111344 /* CompletedTasksView.swift */; };
+		1A42B2282A311AAA00111344 /* DetroitDialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42B2272A311AAA00111344 /* DetroitDialView.swift */; };
+		1A42B22A2A31211000111344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A42B2292A31211000111344 /* Assets.xcassets */; };
 		1A4C099C2A1E93810052B582 /* UserLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C099B2A1E93810052B582 /* UserLocationManager.swift */; };
 		1A4C099F2A213E7A0052B582 /* YelpFusionAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C099E2A213E7A0052B582 /* YelpFusionAPIService.swift */; };
 		1A4C09A12A213EB90052B582 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C09A02A213EB90052B582 /* APIKeys.swift */; };
@@ -44,6 +51,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A42B21D2A3118D700111344 /* BottomDrawerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomDrawerView.swift; sourceTree = "<group>"; };
+		1A42B21F2A3118EF00111344 /* SegmentedPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedPickerView.swift; sourceTree = "<group>"; };
+		1A42B2212A3119A900111344 /* ViewCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCategory.swift; sourceTree = "<group>"; };
+		1A42B2232A311A1D00111344 /* PendingTaskListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTaskListView.swift; sourceTree = "<group>"; };
+		1A42B2252A311A7300111344 /* CompletedTasksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedTasksView.swift; sourceTree = "<group>"; };
+		1A42B2272A311AAA00111344 /* DetroitDialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetroitDialView.swift; sourceTree = "<group>"; };
+		1A42B2292A31211000111344 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Documents/Cultured/Cultured/Assets.xcassets; sourceTree = "<group>"; };
 		1A4C099B2A1E93810052B582 /* UserLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationManager.swift; sourceTree = "<group>"; };
 		1A4C099E2A213E7A0052B582 /* YelpFusionAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpFusionAPIService.swift; sourceTree = "<group>"; };
 		1A4C09A02A213EB90052B582 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
@@ -129,6 +143,7 @@
 				1AB818F02A15495D006E99A8 /* Views */,
 				1AB818CB2A1547AF006E99A8 /* Preview Assets.xcassets */,
 				1AB818C72A1547AF006E99A8 /* Assets.xcassets */,
+				1A42B2292A31211000111344 /* Assets.xcassets */,
 				1AB818C92A1547AF006E99A8 /* CulturedUi.entitlements */,
 				1AB818CA2A1547AF006E99A8 /* Preview Content */,
 			);
@@ -167,6 +182,11 @@
 				1AB818F72A17A883006E99A8 /* DestinationsView.swift */,
 				1AB818FC2A17F73A006E99A8 /* DropMenuListView.swift */,
 				1A4C09A22A291E9B0052B582 /* AnnotationView.swift */,
+				1A42B21D2A3118D700111344 /* BottomDrawerView.swift */,
+				1A42B21F2A3118EF00111344 /* SegmentedPickerView.swift */,
+				1A42B2232A311A1D00111344 /* PendingTaskListView.swift */,
+				1A42B2252A311A7300111344 /* CompletedTasksView.swift */,
+				1A42B2272A311AAA00111344 /* DetroitDialView.swift */,
 				1AB818F92A17B92E006E99A8 /* DestinationsViewModel */,
 				1AB818F32A155F8D006E99A8 /* Models */,
 			);
@@ -177,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				1AB818F12A155F83006E99A8 /* Models.swift */,
+				1A42B2212A3119A900111344 /* ViewCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AB818CC2A1547AF006E99A8 /* Preview Assets.xcassets in Resources */,
+				1A42B22A2A31211000111344 /* Assets.xcassets in Resources */,
 				1AB818C82A1547AF006E99A8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,14 +354,20 @@
 				1A4C09A12A213EB90052B582 /* APIKeys.swift in Sources */,
 				1A4C09A32A291E9B0052B582 /* AnnotationView.swift in Sources */,
 				1AB818FB2A17B954006E99A8 /* DestinationsViewModel.swift in Sources */,
+				1A42B2242A311A1D00111344 /* PendingTaskListView.swift in Sources */,
 				1AB818FD2A17F73A006E99A8 /* DropMenuListView.swift in Sources */,
 				1AB818C62A1547AE006E99A8 /* ContentView.swift in Sources */,
 				1AB818F82A17A883006E99A8 /* DestinationsView.swift in Sources */,
+				1A42B2262A311A7300111344 /* CompletedTasksView.swift in Sources */,
+				1A42B21E2A3118D700111344 /* BottomDrawerView.swift in Sources */,
 				1A4C099F2A213E7A0052B582 /* YelpFusionAPIService.swift in Sources */,
+				1A42B2222A3119A900111344 /* ViewCategory.swift in Sources */,
 				1AB818F62A170BFF006E99A8 /* DestinationDataService.swift in Sources */,
 				1AB818EF2A154939006E99A8 /* MapView.swift in Sources */,
 				1AB818C42A1547AE006E99A8 /* CulturedUiApp.swift in Sources */,
+				1A42B2202A3118EF00111344 /* SegmentedPickerView.swift in Sources */,
 				1AB818F22A155F83006E99A8 /* Models.swift in Sources */,
+				1A42B2282A311AAA00111344 /* DetroitDialView.swift in Sources */,
 				1A4C099C2A1E93810052B582 /* UserLocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

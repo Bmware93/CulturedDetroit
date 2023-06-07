@@ -37,11 +37,12 @@ struct DestionationCoordinates: Codable {
 }
 
 
-struct Task: Identifiable {
+struct Task: Identifiable, Hashable {
     let id = UUID()
-    let title: String
     let searchTerm: String
-    
+    let description: String
+    let imageName: String
+    var isCompleted: Bool = false
 }
 
 enum DistrictAreas: String, CaseIterable {

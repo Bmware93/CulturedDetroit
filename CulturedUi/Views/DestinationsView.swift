@@ -35,6 +35,7 @@ struct DestinationsView: View {
 //                            .font(.caption2)
                             
                     }
+                   
                     
                 }
 
@@ -50,22 +51,23 @@ struct DestinationsView: View {
             
             VStack {
                 ForEach(vm.tasks) { task in
-                    Button {
-                        _Concurrency.Task {
-                            do {
-                                try await vm.businesses(searchingFor: task.searchTerm, at: vm.mapRegion.center)
-                            } catch {
-                                print(error.localizedDescription)
-                            }
-                           
-                        }
-                        
-                    } label: {
-                       Text(task.title)
-                    }
-                    .buttonStyle(.borderedProminent)
+//                    Button {
+//                        _Concurrency.Task {
+//                            do {
+//                                try await vm.businesses(searchingFor: task.searchTerm, at: vm.mapRegion.center)
+//                            } catch {
+//                                print(error.localizedDescription)
+//                            }
+//                           
+//                        }
+//                        
+//                    } label: {
+//                       Text(task.title)
+//                    }
+//                    .buttonStyle(.borderedProminent)
                 }
             }
+            BottomDrawerView()
         }
     }
 }
