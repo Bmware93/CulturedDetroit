@@ -139,7 +139,6 @@
 				1AB818C32A1547AE006E99A8 /* CulturedUiApp.swift */,
 				1AB818F42A170BC5006E99A8 /* DataServices */,
 				1AB818F02A15495D006E99A8 /* Views */,
-				1AB818CB2A1547AF006E99A8 /* Preview Assets.xcassets */,
 				1AB818C72A1547AF006E99A8 /* Assets.xcassets */,
 				1A42B2292A31211000111344 /* Assets.xcassets */,
 				1AB818C92A1547AF006E99A8 /* CulturedUi.entitlements */,
@@ -195,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				1AB818F12A155F83006E99A8 /* Models.swift */,
+				1AB818CB2A1547AF006E99A8 /* Preview Assets.xcassets */,
 			);
 			path = Models;
 			sourceTree = "<group>";
