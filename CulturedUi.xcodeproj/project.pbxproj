@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1A42B21E2A3118D700111344 /* BottomDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42B21D2A3118D700111344 /* BottomDrawerView.swift */; };
 		1A42B2202A3118EF00111344 /* SegmentedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42B21F2A3118EF00111344 /* SegmentedPickerView.swift */; };
-		1A42B2222A3119A900111344 /* ViewCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42B2212A3119A900111344 /* ViewCategory.swift */; };
 		1A42B2242A311A1D00111344 /* PendingTaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42B2232A311A1D00111344 /* PendingTaskListView.swift */; };
 		1A42B2262A311A7300111344 /* CompletedTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42B2252A311A7300111344 /* CompletedTasksView.swift */; };
 		1A42B2282A311AAA00111344 /* DetroitDialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42B2272A311AAA00111344 /* DetroitDialView.swift */; };
@@ -53,7 +52,6 @@
 /* Begin PBXFileReference section */
 		1A42B21D2A3118D700111344 /* BottomDrawerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomDrawerView.swift; sourceTree = "<group>"; };
 		1A42B21F2A3118EF00111344 /* SegmentedPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedPickerView.swift; sourceTree = "<group>"; };
-		1A42B2212A3119A900111344 /* ViewCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCategory.swift; sourceTree = "<group>"; };
 		1A42B2232A311A1D00111344 /* PendingTaskListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTaskListView.swift; sourceTree = "<group>"; };
 		1A42B2252A311A7300111344 /* CompletedTasksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedTasksView.swift; sourceTree = "<group>"; };
 		1A42B2272A311AAA00111344 /* DetroitDialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetroitDialView.swift; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				1AB818F12A155F83006E99A8 /* Models.swift */,
-				1A42B2212A3119A900111344 /* ViewCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -361,7 +358,6 @@
 				1A42B2262A311A7300111344 /* CompletedTasksView.swift in Sources */,
 				1A42B21E2A3118D700111344 /* BottomDrawerView.swift in Sources */,
 				1A4C099F2A213E7A0052B582 /* YelpFusionAPIService.swift in Sources */,
-				1A42B2222A3119A900111344 /* ViewCategory.swift in Sources */,
 				1AB818F62A170BFF006E99A8 /* DestinationDataService.swift in Sources */,
 				1AB818EF2A154939006E99A8 /* MapView.swift in Sources */,
 				1AB818C42A1547AE006E99A8 /* CulturedUiApp.swift in Sources */,
