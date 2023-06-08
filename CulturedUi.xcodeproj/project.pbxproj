@@ -150,6 +150,7 @@
 		1AB818CA2A1547AF006E99A8 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				1AB818CB2A1547AF006E99A8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -194,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				1AB818F12A155F83006E99A8 /* Models.swift */,
-				1AB818CB2A1547AF006E99A8 /* Preview Assets.xcassets */,
 			);
 			path = Models;
 			sourceTree = "<group>";
