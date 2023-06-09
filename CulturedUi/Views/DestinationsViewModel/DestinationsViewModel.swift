@@ -16,7 +16,9 @@ class DestinationsViewModel: ObservableObject {
     @Published var tasks: [Task]
     @Published var completedTasks: [Task] = []
     
-    @Published var districts:[District]
+    @Published var districts:[District] = [
+        
+    ]
     
     //Current location on the map
     @Published var mapLocation: District {
@@ -26,12 +28,12 @@ class DestinationsViewModel: ObservableObject {
     }
     //Current District on map
     @Published var mapRegion: MKCoordinateRegion = MKCoordinateRegion()
-    public static var mapSpan = MKCoordinateSpan(latitudeDelta: 0.0090, longitudeDelta: 0.0090)
+    public static var mapSpan = MKCoordinateSpan(latitudeDelta: 0.0060, longitudeDelta: 0.0060)
     
     //Show list of districts
-    @Published var showDistrictsList: Bool = false
+    @Published var showZonesList: Bool = false
     
-    @Published var progress: Double = 100.0
+//    @Published var progress: Double = 0
     @Published var selectedViewCategory: ViewCategories = .activities
     
     init() {
@@ -45,7 +47,6 @@ class DestinationsViewModel: ObservableObject {
             Task(searchTerm: "Coffee", description: "Purchase a chai latte.", imageName: "lattePic"),
             Task(searchTerm: "Seafood", description: "Try seafood dish.", imageName: "salmonDishPic"),
             Task(searchTerm: "Riverwalk", description: "Enjoy a walk along the river.", imageName: "detWalkingPathPic"),
-
         ]
         self.updateMapRegion(district: districts.first!)
     }
@@ -65,23 +66,36 @@ class DestinationsViewModel: ObservableObject {
     
      func toggleDistrictsList() {
         withAnimation(.easeInOut) {
-            showDistrictsList.toggle()
+            showZonesList.toggle()
         }
     }
     
-    func showNextDistrict(district: District) {
+    
+    // MARK: Drop Menu List Functions
+    
+    func showNextZone(zone: District) {
         withAnimation(.easeInOut) {
-            mapLocation = district
-            showDistrictsList = false
+            mapLocation = zone
+            showZonesList = false
+        }
+    }
+    var progress: Double {
+        return tasks.reduce(0) { partialResult, tasks in
+            if task.isComplete {
+                
+            }
+            
         }
     }
     
     func completeTask(task: Task) {
         if let index = tasks.firstIndex(of: task) {
+            var task = task
+            task.isCompleted = true
             tasks.remove(at: index)
             completedTasks.append(task)
+            // save [task] to filepath
             progress = Double(completedTasks.count) / Double(completedTasks.count + tasks.count)
-            
         }
     }
 }

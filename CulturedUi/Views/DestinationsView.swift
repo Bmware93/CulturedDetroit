@@ -81,31 +81,37 @@ struct DestinationsView_Previews: PreviewProvider {
 
 extension DestinationsView {
     private var dropMenu: some View {
-        VStack {
-            Button(action: vm.toggleDistrictsList) {
-                Text(vm.mapLocation.name.rawValue)
-                    .font(.title2)
-                    .fontWeight(.black)
-                    .foregroundColor(.primary)
-                    .frame(height: 55)
-                .frame(maxWidth:.infinity)
-                //.background(Color.cyan)
-                .overlay(alignment: .leading) {
-                    Image(systemName: "arrow.down")
-                        .font(.headline)
-                        .foregroundColor(.primary)
-                        .padding()
+        HStack(alignment: .top) {
+            VStack {
+                //MARK: Drop Down Menu
+                Button(action: vm.toggleDistrictsList) {
+                    Text(vm.mapLocation.name.rawValue)
+                        .font(.system(size: 35))
+                        .minimumScaleFactor(0.5)
+                        .fontWeight(.medium)
+                        .foregroundColor(.black)
+                        .frame(height: 55)
+                        .frame(maxWidth: .infinity)
+                        .padding(.leading, 55)
+                        .overlay(alignment: .leading) {
+                    Image(systemName: "chevron.down")
+                            .font(.system(size: 25))
+                            .minimumScaleFactor(0.5)
+                            .foregroundColor(.primary)
+                            .padding()
+                            .padding(.trailing)
+                            .rotationEffect(Angle(degrees: vm.showZonesList ? 180 : 0))
+                    }
                 }
                 
-                if vm.showDistrictsList == true {
+                if vm.showZonesList == true {
                     DropMenuListView()
                 }
             }
-            
+            .background(.thickMaterial)
+            .cornerRadius(10)
+            .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 15)
+            .padding()
         }
-        .background(.thickMaterial)
-        .cornerRadius(10)
-        .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 15)
-        .padding()
     }
 }
