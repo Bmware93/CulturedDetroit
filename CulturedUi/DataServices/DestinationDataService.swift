@@ -17,8 +17,11 @@ class DestinationDataService {
     }
     
     static var districts: [District] {[
-        //MARK: Waterfront
-        District(name: .waterFront, coordinates: CLLocationCoordinate2D(latitude: 42.328324, longitude: -83.039265)),
+        
+        // MARK: Atwater
+        District(name: .atwater, coordinates: CLLocationCoordinate2D(latitude: 42.336556, longitude: -83.019315)),
+        // MARK: The Belt
+        District(name: .theBelt, coordinates: CLLocationCoordinate2D(latitude: 42.334632, longitude: -83.046622)),
         //MARK: Campus Martius
         District(name: .campusMartius, coordinates: CLLocationCoordinate2D(latitude: 42.331545, longitude: -83.046635)),
         //MARK: Capitol Park
@@ -27,8 +30,8 @@ class DestinationDataService {
         District(name: .grandCircusPark, coordinates: CLLocationCoordinate2D(latitude: 42.336304, longitude: -83.051291)),
         // MARK: Greektown
         District(name: .greektown, coordinates: CLLocationCoordinate2D(latitude: 42.334103, longitude: -83.041788)),
-        // MARK: Atwater
-        District(name: .atwater, coordinates: CLLocationCoordinate2D(latitude: 42.336556, longitude: -83.019315)),
+        //MARK: Waterfront
+        District(name: .waterFront, coordinates: CLLocationCoordinate2D(latitude: 42.328324, longitude: -83.039265)),
     ]
     }
 }
