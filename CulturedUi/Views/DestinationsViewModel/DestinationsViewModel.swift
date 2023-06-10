@@ -33,7 +33,7 @@ class DestinationsViewModel: ObservableObject {
     //Show list of districts
     @Published var showZonesList: Bool = false
     
-//    @Published var progress: Double = 0
+    @Published var progress: Double = 0
     @Published var selectedViewCategory: ViewCategories = .activities
     
     init() {
@@ -77,14 +77,6 @@ class DestinationsViewModel: ObservableObject {
         withAnimation(.easeInOut) {
             mapLocation = zone
             showZonesList = false
-        }
-    }
-    var progress: Double {
-        return tasks.reduce(0) { partialResult, tasks in
-            if task.isComplete {
-                
-            }
-            
         }
     }
     

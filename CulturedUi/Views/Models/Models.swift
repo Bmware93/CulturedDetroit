@@ -51,13 +51,13 @@ struct Task: Identifiable, Hashable, Codable {
         self.imageName = imageName
     }
         
-        init(from decoder: Decoder) throws {
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-            self.searchTerm = try container.decode(String.self, forKey: .searchTerm)
-            self.description = try container.decode(String.self, forKey: .description)
-            self.imageName = try container.decode(String.self, forKey: .imageName)
-            self.isCompleted = try container.decode(Bool.self, forKey: .isCompleted)
-        }
+//        init(from decoder: Decoder) throws {
+//            let container = try decoder.container(keyedBy: CodingKeys.self)
+//            self.searchTerm = try container.decode(String.self, forKey: .searchTerm)
+//            self.description = try container.decode(String.self, forKey: .description)
+//            self.imageName = try container.decode(String.self, forKey: .imageName)
+//            self.isCompleted = try container.decode(Bool.self, forKey: .isCompleted)
+//        }
     
     static func load() -> [Task] {
         return [
@@ -70,7 +70,13 @@ struct Task: Identifiable, Hashable, Codable {
 }
 
 enum DistrictAreas: String, CaseIterable {
-    case capitolPark, greektown, FoxTheater, waterFront, campusMartius, grandCircusPark, theBelt
+    case capitolPark = "Capital Park"
+    case greektown = "Greektown"
+    case atwater = "Atwater"
+    case waterFront = "Waterfront"
+    case campusMartius = "Campus Martius"
+    case grandCircusPark = "Grand Circus Park"
+    case theBelt = "The Belt"
 }
 
 enum ViewCategory: String, CaseIterable {

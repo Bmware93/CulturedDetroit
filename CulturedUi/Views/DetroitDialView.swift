@@ -9,9 +9,6 @@ import SwiftUI
 
 struct DetroitDialView: View {
     @ObservedObject var vm: DestinationsViewModel
-    
-//    @State var progressPercent: Double
-    
     var body: some View {
         VStack {
             CircularProgressView(vm: vm)

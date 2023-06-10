@@ -25,7 +25,10 @@ class DestinationDataService {
         District(name: .capitolPark, coordinates: CLLocationCoordinate2D(latitude: 42.332899, longitude: -83.049526)),
         // MARK: The Grand Circus Park
         District(name: .grandCircusPark, coordinates: CLLocationCoordinate2D(latitude: 42.336304, longitude: -83.051291)),
+        // MARK: Greektown
         District(name: .greektown, coordinates: CLLocationCoordinate2D(latitude: 42.334103, longitude: -83.041788)),
+        // MARK: Atwater
+        District(name: .atwater, coordinates: CLLocationCoordinate2D(latitude: 42.336556, longitude: -83.019315)),
     ]
     }
 }

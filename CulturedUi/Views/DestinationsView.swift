@@ -15,6 +15,7 @@ struct DestinationsView: View {
     @StateObject private var locationManager = LocationManager()
 
     var body: some View {
+        // MARK: MAPVIEW and Drop Menu
         ZStack {
             Map(coordinateRegion: $vm.mapRegion, interactionModes: .all, showsUserLocation: true,
                 userTrackingMode: .constant(.none), annotationItems: vm.destinations) {
@@ -90,16 +91,16 @@ extension DestinationsView {
                         .minimumScaleFactor(0.5)
                         .fontWeight(.medium)
                         .foregroundColor(.black)
-                        .frame(height: 55)
+                        .frame(height: 56)
                         .frame(maxWidth: .infinity)
-                        .padding(.leading, 55)
+                        .padding(.leading, 54)
+                        .padding(.trailing, 20)
                         .overlay(alignment: .leading) {
                     Image(systemName: "chevron.down")
                             .font(.system(size: 25))
                             .minimumScaleFactor(0.5)
                             .foregroundColor(.primary)
                             .padding()
-                            .padding(.trailing)
                             .rotationEffect(Angle(degrees: vm.showZonesList ? 180 : 0))
                     }
                 }
