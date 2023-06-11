@@ -21,7 +21,6 @@ struct DestinationsView: View {
                 destination in
                 MapAnnotation(coordinate: destination.clCoordinate) {
                     VStack {
-                
 //                        Button {
                             // if we tap on a business, pass the business to this property so our sheet will show
                            //AnnotationView = destination
