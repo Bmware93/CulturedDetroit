@@ -89,7 +89,6 @@ extension DestinationsView {
                     .foregroundColor(.primary)
                     .frame(height: 55)
                 .frame(maxWidth:.infinity)
-                //.background(Color.cyan)
                 .overlay(alignment: .leading) {
                     Image(systemName: "arrow.down")
                         .font(.headline)

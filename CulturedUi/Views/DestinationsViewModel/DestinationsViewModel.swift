@@ -31,7 +31,7 @@ class DestinationsViewModel: ObservableObject {
     //Show list of districts
     @Published var showDistrictsList: Bool = false
     
-    @Published var progress: Double = 100.0
+    @Published var progress: Double = 0
     @Published var selectedViewCategory: ViewCategories = .activities
     
     init() {
@@ -41,6 +41,14 @@ class DestinationsViewModel: ObservableObject {
         self.mapLocation = districts.first!
         
         self.tasks = [
+            Task(searchTerm: "Pizza", description: "Eat pizza from a local restaurant.", imageName: "nikisDetPizzaPic"),
+            Task(searchTerm: "Coffee", description: "Purchase a chai latte.", imageName: "lattePic"),
+            Task(searchTerm: "Seafood", description: "Try seafood dish.", imageName: "salmonDishPic"),
+            Task(searchTerm: "Riverwalk", description: "Enjoy a walk along the river.", imageName: "detWalkingPathPic"),
+            Task(searchTerm: "Pizza", description: "Eat pizza from a local restaurant.", imageName: "nikisDetPizzaPic"),
+            Task(searchTerm: "Coffee", description: "Purchase a chai latte.", imageName: "lattePic"),
+            Task(searchTerm: "Seafood", description: "Try seafood dish.", imageName: "salmonDishPic"),
+            Task(searchTerm: "Riverwalk", description: "Enjoy a walk along the river.", imageName: "detWalkingPathPic"),
             Task(searchTerm: "Pizza", description: "Eat pizza from a local restaurant.", imageName: "nikisDetPizzaPic"),
             Task(searchTerm: "Coffee", description: "Purchase a chai latte.", imageName: "lattePic"),
             Task(searchTerm: "Seafood", description: "Try seafood dish.", imageName: "salmonDishPic"),
