@@ -41,7 +41,7 @@ class DestinationsViewModel: ObservableObject {
         self.mapLocation = districts.first!
         
         self.tasks = [
-            Task(searchTerm: "Pizza", description: "Eat pizza from a local restaurant.", imageName: "nikisDetPizzaPic"),
+            Task(searchTerm: "Pizza", description: "Eat local pizza.", imageName: "nikisDetPizzaPic"),
             Task(searchTerm: "Coffee", description: "Purchase a chai latte.", imageName: "lattePic"),
             Task(searchTerm: "Seafood", description: "Try seafood dish.", imageName: "salmonDishPic"),
             Task(searchTerm: "Riverwalk", description: "Enjoy a walk along the river.", imageName: "detWalkingPathPic"),
