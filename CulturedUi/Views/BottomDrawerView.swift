@@ -7,20 +7,22 @@
 
 import SwiftUI
 
-// DrawerView Code Here
 struct BottomDrawerView: View {
     @State private var offSet: CGFloat = 0
     @State private var isInitialOffsetSet: Bool = false
     @GestureState private var dragOffset: CGSize = .zero
+    
+    let drawerHeights: [CGFloat] = [200, 300, 400]
+    let initialHeight: CGFloat = 490
+    let minHeight: CGFloat = 150
+    let maxHeight: CGFloat = 818
+    
     var body: some View {
         ZStack {
             GeometryReader { proxy in
-                
-                // MARK: Blur Effect Here
                 BlurView(style: .systemUltraThinMaterial)
                 VStack {
                     CapsuleView()
-                    // MARK: Actual PickerButton
                     SegmentedPickerView(vm: DestinationsViewModel())
                         .environmentObject(DestinationsViewModel())
                 }
@@ -30,15 +32,14 @@ struct BottomDrawerView: View {
             .gesture(
                 DragGesture()
                     .onChanged { value in
-//                        let startLocation = value.startLocation
-//                    offSet = value.translation.height
                         let newOffset = offSet + value.translation.height
-                                             offSet = min(max(newOffset, 0), UIScreen.main.bounds.height - 250)
+                        // Limit the offset to the height range of the drawer
+                        offSet = min(max(newOffset, UIScreen.main.bounds.height - maxHeight), UIScreen.main.bounds.height - minHeight)
                     }
             )
             .onAppear {
                 if !isInitialOffsetSet {
-                    offSet = UIScreen.main.bounds.height - 250
+                    offSet = UIScreen.main.bounds.height - initialHeight
                     isInitialOffsetSet = true
                 }
             }
@@ -68,13 +69,13 @@ struct CapsuleView: View {
 // Blurred View Here
 struct BlurView: UIViewRepresentable {
     let style: UIBlurEffect.Style
-    
+
     func makeUIView(context: Context) -> UIVisualEffectView {
         let view = UIVisualEffectView(effect: UIBlurEffect(style: style))
-        
+
         return view
     }
-    
+
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
         // do nothing
     }
