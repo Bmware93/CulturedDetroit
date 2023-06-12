@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SegmentedPickerView: View {
-    @ObservedObject var vm: DestinationsViewModel
+    @EnvironmentObject var vm: DestinationsViewModel
     var body: some View {
         VStack {
             Picker("Category", selection: $vm.selectedViewCategory) {
@@ -19,7 +19,7 @@ struct SegmentedPickerView: View {
             .pickerStyle(SegmentedPickerStyle())
             
             if vm.selectedViewCategory == .activities {
-                PendingTaskListView(vm: vm)
+                PendingTaskListView(vm: _vm)
                     .padding(.top, 0)
             } else if vm.selectedViewCategory == .completed {
                 CompletedTasksView(vm: vm)
@@ -34,7 +34,8 @@ struct SegmentedPickerView: View {
 
 struct SegmentedPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        SegmentedPickerView(vm: DestinationsViewModel())
+        SegmentedPickerView()
+            .environmentObject(DestinationsViewModel())
         
     }
 }

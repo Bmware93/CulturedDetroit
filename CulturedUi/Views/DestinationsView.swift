@@ -11,8 +11,8 @@ import MapKit
 
 struct DestinationsView: View {
     
-    @EnvironmentObject private var vm: DestinationsViewModel
-    @StateObject private var locationManager = LocationManager()
+    @EnvironmentObject  var vm: DestinationsViewModel
+    @StateObject  var locationManager = LocationManager()
 
     var body: some View {
         ZStack {
@@ -50,10 +50,11 @@ struct DestinationsView: View {
             }
             
             VStack {
-                ForEach(vm.tasks) { task in
+//                ForEach(vm.tasks) { task in
 //                    Button {
 //                        _Concurrency.Task {
 //                            do {
+//                               // print("this is the coordinate\(vm.mapRegion.center)")
 //                                try await vm.businesses(searchingFor: task.searchTerm, at: vm.mapRegion.center)
 //                            } catch {
 //                                print(error.localizedDescription)
@@ -62,10 +63,10 @@ struct DestinationsView: View {
 //                        }
 //                        
 //                    } label: {
-//                       Text(task.title)
+//                       Text(task.description)
 //                    }
 //                    .buttonStyle(.borderedProminent)
-                }
+//                }
             }
             BottomDrawerView()
         }

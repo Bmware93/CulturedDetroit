@@ -50,9 +50,12 @@ class DestinationsViewModel: ObservableObject {
         self.updateMapRegion(district: districts.first!)
     }
     
+    @MainActor
     //Function that calls the API 
     func businesses(searchingFor term: String, at location: CLLocationCoordinate2D) async throws {
-        self.destinations = try await YelpFusionAPIService().businesses(searchingFor: term, at: location)
+        let destinations = try await YelpFusionAPIService().businesses(searchingFor: term, at: location)
+        
+        self.destinations = destinations
     }
 
     

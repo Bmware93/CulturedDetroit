@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PendingTaskListView: View {
-    @ObservedObject var vm: DestinationsViewModel
+    @EnvironmentObject var vm: DestinationsViewModel
     @ScaledMetric var fontSize: CGFloat = 15 // Default font size
     var body: some View {
         NavigationView {
@@ -26,16 +26,28 @@ struct PendingTaskListView: View {
                                 Text(task.description)
                                     .font(.system(size: fontSize))
                                     .minimumScaleFactor(0.5) // Adjust as needed
-                                .lineLimit(1)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                Button(action: {
-                                    vm.completeTask(task: task)
-                                }) {
-                                    Text("Search")
-                                        .font(.system(size: fontSize))
-                                        .minimumScaleFactor(0.5) // Adjust as needed
                                     .lineLimit(1)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                
+                                Button {
+                                    _Concurrency.Task {
+                                        do {
+                                            
+                                            try await vm.businesses(searchingFor: task.searchTerm, at: vm.mapRegion.center)
+                                        } catch {
+                                            print(error.localizedDescription)
+                                        }
+                                        
+                                    }
+                                    
+                                } label: {
+                                    Text("Search")
                                 }
+                                //
+                                //                                        .font(.system(size: fontSize))
+                                //                                        .minimumScaleFactor(0.5) // Adjust as needed
+                                //                                    .lineLimit(1)
+                                //                                }
                                 .buttonStyle(.borderedProminent)
                             }
                         }
@@ -43,14 +55,15 @@ struct PendingTaskListView: View {
                     }
                 }
             }
-                .navigationTitle("Activities")
+            .navigationTitle("Activities")
         }
     }
 }
 
 struct PendingTaskListView_Previews: PreviewProvider {
     static var previews: some View {
-        PendingTaskListView(vm: DestinationsViewModel())
+        PendingTaskListView()
+            .environmentObject(DestinationsViewModel())
     }
 }
 
