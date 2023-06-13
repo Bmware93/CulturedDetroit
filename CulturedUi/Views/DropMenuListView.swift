@@ -11,23 +11,21 @@ struct DropMenuListView: View {
     
     @EnvironmentObject private var vm: DestinationsViewModel
     
+    
     var body: some View {
-        List {
+        VStack {
             ForEach(vm.districts) { district in
                 Button {
-                    vm.showNextDistrict(district: district)
+                    vm.showNextZone(zone: district)
                 } label: {
                     listRowView(district: district)
-                
                 }
                 .padding(.vertical, 4)
                 .listRowBackground(Color.clear)
-
-                
-                
+                Divider()
             }
         }
-        .listStyle(.inset)
+        .padding()
     }
 }
 
@@ -42,8 +40,9 @@ extension DropMenuListView {
     
    private  func listRowView(district: District) -> some View {
            VStack(alignment: .leading) {
-                   Text(district.name.rawValue)
-                       .font(.headline)
+               Text(district.name.rawValue)
+                       .font(.title2)
+                       .foregroundColor(.primary)
               
            }
            .frame(maxWidth: .infinity, alignment: .leading)
