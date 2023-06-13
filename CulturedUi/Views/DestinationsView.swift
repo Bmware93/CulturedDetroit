@@ -22,7 +22,6 @@ struct DestinationsView: View {
                 destination in
                 MapAnnotation(coordinate: destination.clCoordinate) {
                     VStack {
-                
 //                        Button {
                             // if we tap on a business, pass the business to this property so our sheet will show
                            //AnnotationView = destination
@@ -82,27 +81,20 @@ struct DestinationsView_Previews: PreviewProvider {
 
 extension DestinationsView {
     private var dropMenu: some View {
-        HStack(alignment: .top) {
-            VStack {
-                //MARK: Drop Down Menu
-                Button(action: vm.toggleDistrictsList) {
-                    Text(vm.mapLocation.name.rawValue)
-                        .font(.system(size: 35))
-                        .minimumScaleFactor(0.5)
-                        .fontWeight(.medium)
-                        .foregroundColor(.black)
-                        .frame(height: 56)
-                        .frame(maxWidth: .infinity)
-                        .padding(.leading, 54)
-                        .padding(.trailing, 20)
-                        .overlay(alignment: .leading) {
-                    Image(systemName: "chevron.down")
-                            .font(.system(size: 25))
-                            .minimumScaleFactor(0.5)
-                            .foregroundColor(.primary)
-                            .padding()
-                            .rotationEffect(Angle(degrees: vm.showZonesList ? 180 : 0))
-                    }
+
+        VStack {
+            Button(action: vm.toggleDistrictsList) {
+                Text(vm.mapLocation.name.rawValue)
+                    .font(.title2)
+                    .fontWeight(.black)
+                    .foregroundColor(.primary)
+                    .frame(height: 55)
+                .frame(maxWidth:.infinity)
+                .overlay(alignment: .leading) {
+                    Image(systemName: "arrow.down")
+                        .font(.headline)
+                        .foregroundColor(.primary)
+                        .padding()
                 }
                 
                 if vm.showZonesList == true {
