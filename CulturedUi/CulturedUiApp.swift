@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct CulturedUiApp: App {
     
-    @StateObject private var vm = DestinationsViewModel()
+    @StateObject  var vm = DestinationsViewModel()
     
     var body: some Scene {
         WindowGroup {

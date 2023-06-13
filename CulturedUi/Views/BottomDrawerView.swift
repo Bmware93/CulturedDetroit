@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BottomDrawerView: View {
+    @EnvironmentObject var vm: DestinationsViewModel
     @State private var offSet: CGFloat = 0
     @State private var isInitialOffsetSet: Bool = false
     @GestureState private var dragOffset: CGSize = .zero
@@ -23,8 +24,12 @@ struct BottomDrawerView: View {
                 BlurView(style: .systemUltraThinMaterial)
                 VStack {
                     CapsuleView()
-                    SegmentedPickerView(vm: DestinationsViewModel())
-                        .environmentObject(DestinationsViewModel())
+
+                    // MARK: Actual PickerButton
+                    SegmentedPickerView(vm: _vm)
+                        
+
+
                 }
             }
             .offset(y: offSet)
@@ -50,6 +55,7 @@ struct BottomDrawerView: View {
 struct BottomDrawerView_Previews: PreviewProvider {
     static var previews: some View {
         BottomDrawerView()
+            .environmentObject(DestinationsViewModel())
     }
 }
 
