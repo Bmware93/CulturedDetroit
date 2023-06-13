@@ -9,9 +9,6 @@ import SwiftUI
 
 struct DetroitDialView: View {
     @ObservedObject var vm: DestinationsViewModel
-    
-//    @State var progressPercent: Double
-    
     var body: some View {
         VStack {
             CircularProgressView(vm: vm)
@@ -32,20 +29,36 @@ struct CircularProgressView: View {
                     .stroke(lineWidth: 20)
                     .opacity(0.3)
                     .foregroundColor(.gray)
-                Circle()
-                    .trim(from: 0.0, to: CGFloat(vm.progress))
-                    .stroke(style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
-                    .foregroundColor(.orange)
-                    .rotationEffect(Angle(degrees: -90))
+                LinearGradient(
+                    gradient: gradientColors(),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .mask({
+                    Circle()
+                        .trim(from: 0.0, to: CGFloat(vm.progress))
+                        .stroke(style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
+                })
+                 .rotationEffect(Angle(degrees: -90))
                 
-                Text("\(Int(vm.progress * 100))%")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.orange)
+                LinearGradient(
+                    gradient: gradientColors(),
+                    startPoint: .leading,
+                    endPoint: .trailing
+                )
+                .mask({
+                    Text("\(Int(vm.progress * 100))%")
+                        .font(.largeTitle)
+                        .bold()
+                })
             }
         }
         .padding(80)
     }
+    private func gradientColors() -> Gradient {
+        let colors: [Color] = [.purple, .red, .orange, .yellow, .indigo]
+        return Gradient(colors: colors)
+        }
 }
 
 

@@ -15,13 +15,13 @@ struct DestinationsView: View {
     @StateObject  var locationManager = LocationManager()
 
     var body: some View {
+        // MARK: MAPVIEW and Drop Menu
         ZStack {
             Map(coordinateRegion: $vm.mapRegion, interactionModes: .all, showsUserLocation: true,
                 userTrackingMode: .constant(.none), annotationItems: vm.destinations) {
                 destination in
                 MapAnnotation(coordinate: destination.clCoordinate) {
                     VStack {
-                
 //                        Button {
                             // if we tap on a business, pass the business to this property so our sheet will show
                            //AnnotationView = destination
@@ -82,6 +82,7 @@ struct DestinationsView_Previews: PreviewProvider {
 
 extension DestinationsView {
     private var dropMenu: some View {
+
         VStack {
             Button(action: vm.toggleDistrictsList) {
                 Text(vm.mapLocation.name.rawValue)
@@ -90,7 +91,6 @@ extension DestinationsView {
                     .foregroundColor(.primary)
                     .frame(height: 55)
                 .frame(maxWidth:.infinity)
-                //.background(Color.cyan)
                 .overlay(alignment: .leading) {
                     Image(systemName: "arrow.down")
                         .font(.headline)
@@ -98,15 +98,14 @@ extension DestinationsView {
                         .padding()
                 }
                 
-                if vm.showDistrictsList == true {
+                if vm.showZonesList == true {
                     DropMenuListView()
                 }
             }
-            
+            .background(.thickMaterial)
+            .cornerRadius(10)
+            .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 15)
+            .padding()
         }
-        .background(.thickMaterial)
-        .cornerRadius(10)
-        .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 15)
-        .padding()
     }
 }
