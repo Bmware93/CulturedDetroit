@@ -68,7 +68,7 @@ struct DestinationsView: View {
 //                    .buttonStyle(.borderedProminent)
                 }
             }
-            BottomDrawerView()
+            BottomDrawerView(vm: DestinationsViewModel())
         }
     }
 }

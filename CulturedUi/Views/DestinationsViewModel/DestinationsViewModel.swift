@@ -20,6 +20,17 @@ class DestinationsViewModel: ObservableObject {
         
     ]
     
+    // MARK: BottomDrawer Manipulation
+    @Published var offSet: CGFloat = 0
+    @Published var isInitialOffsetSet: Bool = false
+    @Published var drawerOffset: CGFloat = UIScreen.main.bounds.height - 100
+    @Published var dragOffset: CGSize = .zero
+    @Published var drawerHeights: [CGFloat] = [200, 300, 400]
+    @Published var initialHeight: CGFloat = 490
+    @Published var minHeight: CGFloat = 150
+    @Published var maxHeight: CGFloat = 818
+
+    
     //Current location on the map
     @Published var mapLocation: District {
         didSet {

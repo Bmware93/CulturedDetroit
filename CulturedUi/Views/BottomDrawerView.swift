@@ -8,14 +8,7 @@
 import SwiftUI
 
 struct BottomDrawerView: View {
-    @State private var offSet: CGFloat = 0
-    @State private var isInitialOffsetSet: Bool = false
-    @GestureState private var dragOffset: CGSize = .zero
-    
-    let drawerHeights: [CGFloat] = [200, 300, 400]
-    let initialHeight: CGFloat = 490
-    let minHeight: CGFloat = 150
-    let maxHeight: CGFloat = 818
+    @ObservedObject var vm: DestinationsViewModel
     
     var body: some View {
         ZStack {
@@ -27,20 +20,39 @@ struct BottomDrawerView: View {
                         .environmentObject(DestinationsViewModel())
                 }
             }
-            .offset(y: offSet)
-            .animation(.spring(), value: offSet)
+            .offset(y: vm.offSet)
+            .animation(.spring(), value: vm.offSet)
+            .onAppear {
+                        // Slide up the drawer when the view appears
+                        withAnimation {
+                            vm.drawerOffset = 0
+                        }
+                    }
             .gesture(
                 DragGesture()
                     .onChanged { value in
-                        let newOffset = offSet + value.translation.height
+                        let newOffset = vm.offSet + value.translation.height
                         // Limit the offset to the height range of the drawer
-                        offSet = min(max(newOffset, UIScreen.main.bounds.height - maxHeight), UIScreen.main.bounds.height - minHeight)
+                        vm.offSet = min(max(newOffset, UIScreen.main.bounds.height - vm.maxHeight), UIScreen.main.bounds.height - vm.minHeight)
                     }
+                    .onEnded { value in
+                            // Close the drawer if drag distance is less than 100
+                            if value.translation.height < 100 {
+                                withAnimation {
+                                    vm.drawerOffset = 0
+                                }
+                            } else {
+                                // Open the drawer if drag distance is more than 100
+                                withAnimation {
+                                    vm.drawerOffset = UIScreen.main.bounds.height - 100
+                                }
+                            }
+                        }
             )
             .onAppear {
-                if !isInitialOffsetSet {
-                    offSet = UIScreen.main.bounds.height - initialHeight
-                    isInitialOffsetSet = true
+                if !vm.isInitialOffsetSet {
+                    vm.offSet = UIScreen.main.bounds.height - vm.initialHeight
+                    vm.isInitialOffsetSet = true
                 }
             }
         }
@@ -49,7 +61,7 @@ struct BottomDrawerView: View {
 
 struct BottomDrawerView_Previews: PreviewProvider {
     static var previews: some View {
-        BottomDrawerView()
+        BottomDrawerView(vm: DestinationsViewModel())
     }
 }
 

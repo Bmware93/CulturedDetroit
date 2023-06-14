@@ -31,6 +31,9 @@ struct PendingTaskListView: View {
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                 Button(action: {
                                     vm.completeTask(task: task)
+                                    withAnimation {
+                                        vm.drawerOffset = UIScreen.main.bounds.height - 100 // Limit the drop of the drawer
+                                    }
                                 }) {
                                     Text("Search")
                                         .padding(6)
