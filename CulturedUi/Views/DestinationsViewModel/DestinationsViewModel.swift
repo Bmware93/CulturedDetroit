@@ -49,16 +49,15 @@ class DestinationsViewModel: ObservableObject {
             Task(searchTerm: "park", description: "Have a treat in a park.", imageName: "detRiverfrontPic"),
             Task(searchTerm: "seafood", description: "Try seafood dish.", imageName: "salmonDishPic"),
             Task(searchTerm: "empanada", description: "Try an Empanada.", imageName: "empanadaPic"),
-//            Task(searchTerm: "landmark", description:  "I'm bronze and embody the spirit of Detroit, where am I?", imageName: "landmarkPic"),
-            Task(searchTerm: "?", description: "Enjoy bumper cars", imageName: "midwayBumperPic"),
-            Task(searchTerm: "mural", description: "Explore the city's street art", imageName: "streetArtPic"),
+            Task(searchTerm: "midway", description: "Enjoy bumper cars.", imageName: "midwayBumperPic"),
+            Task(searchTerm: "mural", description: "Explore the city's street art.", imageName: "streetArtPic"),
+            Task(searchTerm: "greek", description: "Have some greek food.", imageName: ""),
             Task(searchTerm: "taco", description: "Have a taco...or three.", imageName: "tacosPic"),
             Task(searchTerm: "park", description: "Have lunch in a park.", imageName: "detRiverfrontPic"),
-            Task(searchTerm: "coney", description: "Try a Detroit style Coney", imageName: "coneyDogPic"),
-            Task(searchTerm: "?", description: "Go get some buckets", imageName: "midwayHoopPic"),
-//            Task(searchTerm: "landmark", description:  "I protect the Spirit of Detroit with a fist of bronze and steel. Where am I?", imageName: "landmarkPic"),
+            Task(searchTerm: "coney", description: "Try a Detroit style Coney.", imageName: "coneyDogPic"),
+            Task(searchTerm: "midway", description: "Go get some buckets.", imageName: "midwayHoopPic"),
             Task(searchTerm: "bakery", description:  "Enjoy a treat from a bakery.", imageName: "bakeTreatPic"),
-            
+            Task(searchTerm: "midway", description: "Go roller skating.", imageName: "rollerSkatingPic"),
         ]
         self.updateMapRegion(district: districts.first!)
     }
