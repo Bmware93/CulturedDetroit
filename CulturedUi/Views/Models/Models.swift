@@ -38,7 +38,7 @@ struct DestionationCoordinates: Codable {
 
 
 struct Task: Identifiable, Hashable, Codable {
-    let id = UUID()
+    var id = UUID()
     let searchTerm: String
     let description: String
     let imageName: String

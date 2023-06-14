@@ -11,15 +11,34 @@ struct CompletedTasksView: View {
     @ObservedObject var vm: DestinationsViewModel
     var body: some View {
         NavigationView {
-            List {
-                ForEach(vm.completedTasks, id: \.self) { task in
-                    HStack {
-                        Text(task.description)
+            VStack {
+                List {
+                    ForEach(vm.completedTasks, id: \.self) { task in
+                        HStack {
+                            Text(task.description)
+                        }
                     }
+                }
+                Button(action: {
+                    vm.showingResetAlert = true
+                }) {
+                    Text("Restart")
+                        .foregroundColor(.red)
+                }
+                .alert(isPresented: $vm.showingResetAlert) {
+                    Alert(
+                        title: Text("Restart Progress"),
+                        message: Text("Are you sure you want to restart your progress? This will remove all activities and reset your progress."),
+                        primaryButton: .destructive(Text("Restart")) {
+                            vm.restartProgress()
+                        },
+                        secondaryButton: .cancel()
+                    )
                 }
             }
             .navigationTitle("Completed")
         }
+      
     }
 }
 struct CompletedTasksView_Previews: PreviewProvider {

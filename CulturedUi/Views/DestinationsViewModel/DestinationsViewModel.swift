@@ -36,6 +36,9 @@ class DestinationsViewModel: ObservableObject {
     @Published var progress: Double = 0
     @Published var selectedViewCategory: ViewCategories = .activities
     
+    // MARK: Save Restart Alert
+    @Published var showingResetAlert = false
+    
     init() {
         let districts = DestinationDataService.districts
         self.destinations = []
@@ -99,6 +102,38 @@ class DestinationsViewModel: ObservableObject {
             completedTasks.append(task)
             // save [task] to filepath
             progress = Double(completedTasks.count) / Double(completedTasks.count + tasks.count)
+        }
+    }
+    
+    func restartProgress() {
+        tasks.append(contentsOf: completedTasks)
+        completedTasks.removeAll()
+        for index in tasks.indices {
+            tasks[index].isCompleted = false
+        }
+        objectWillChange.send()
+        
+        saveData()
+    }
+    
+    private func saveData() {
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(completedTasks)
+            UserDefaults.standard.set(data, forKey: "CompletedActivities")
+        } catch {
+            print("Error saving data: \(error)")
+        }
+    }
+    
+    private func loadData() {
+        do {
+            if let data = UserDefaults.standard.data(forKey: "CompletedActivities") {
+                let decoder = JSONDecoder()
+                completedTasks = try decoder.decode([Task].self, from: data)
+            }
+        } catch {
+            print("Error loading data: \(error)")
         }
     }
 }
