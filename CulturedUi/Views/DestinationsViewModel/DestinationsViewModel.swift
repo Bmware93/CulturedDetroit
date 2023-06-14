@@ -43,18 +43,22 @@ class DestinationsViewModel: ObservableObject {
         self.mapLocation = districts.first!
         
         self.tasks = [
-            Task(searchTerm: "Pizza", description: "Eat local pizza.", imageName: "nikisDetPizzaPic"),
-            Task(searchTerm: "Coffee", description: "Purchase a chai latte.", imageName: "lattePic"),
-            Task(searchTerm: "Seafood", description: "Try seafood dish.", imageName: "salmonDishPic"),
-            Task(searchTerm: "Riverwalk", description: "Enjoy a walk along the river.", imageName: "detWalkingPathPic"),
-            Task(searchTerm: "Pizza", description: "Eat pizza from a local restaurant.", imageName: "nikisDetPizzaPic"),
-            Task(searchTerm: "Coffee", description: "Purchase a chai latte.", imageName: "lattePic"),
-            Task(searchTerm: "Seafood", description: "Try seafood dish.", imageName: "salmonDishPic"),
-            Task(searchTerm: "Riverwalk", description: "Enjoy a walk along the river.", imageName: "detWalkingPathPic"),
-            Task(searchTerm: "Pizza", description: "Eat pizza from a local restaurant.", imageName: "nikisDetPizzaPic"),
-            Task(searchTerm: "Coffee", description: "Purchase a chai latte.", imageName: "lattePic"),
-            Task(searchTerm: "Seafood", description: "Try seafood dish.", imageName: "salmonDishPic"),
-            Task(searchTerm: "Riverwalk", description: "Enjoy a walk along the river.", imageName: "detWalkingPathPic"),
+            Task(searchTerm: "coffee", description: "Purchase a chai latte.", imageName: "lattePic"),
+            Task(searchTerm: "riverwalk", description: "Find a view of the Detroit River on foot.", imageName: "detWalkingPathPic"),
+            Task(searchTerm: "pizza", description: "Eat local pizza.", imageName: "nikisDetPizzaPic"),
+            Task(searchTerm: "park", description: "Have a treat in a park.", imageName: "detRiverfrontPic"),
+            Task(searchTerm: "seafood", description: "Try seafood dish.", imageName: "salmonDishPic"),
+            Task(searchTerm: "empanada", description: "Try an Empanada.", imageName: "empanadaPic"),
+//            Task(searchTerm: "landmark", description:  "I'm bronze and embody the spirit of Detroit, where am I?", imageName: "landmarkPic"),
+            Task(searchTerm: "?", description: "Enjoy bumper cars", imageName: "midwayBumperPic"),
+            Task(searchTerm: "mural", description: "Explore the city's street art", imageName: "streetArtPic"),
+            Task(searchTerm: "taco", description: "Have a taco...or three.", imageName: "tacosPic"),
+            Task(searchTerm: "park", description: "Have lunch in a park.", imageName: "detRiverfrontPic"),
+            Task(searchTerm: "coney", description: "Try a Detroit style Coney", imageName: "coneyDogPic"),
+            Task(searchTerm: "?", description: "Go get some buckets", imageName: "midwayHoopPic"),
+//            Task(searchTerm: "landmark", description:  "I protect the Spirit of Detroit with a fist of bronze and steel. Where am I?", imageName: "landmarkPic"),
+            Task(searchTerm: "bakery", description:  "Enjoy a treat from a bakery.", imageName: "bakeTreatPic"),
+            
         ]
         self.updateMapRegion(district: districts.first!)
     }
