@@ -66,7 +66,7 @@ struct CapsuleView: View {
         VStack {
             Capsule()
                 .frame(width: 71, height: 8)
-                .foregroundColor(.white)
+                .foregroundColor(.gray)
                 .padding(9)
         }
     }
