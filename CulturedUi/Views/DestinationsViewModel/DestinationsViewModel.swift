@@ -44,20 +44,23 @@ class DestinationsViewModel: ObservableObject {
         
         self.tasks = [
             Task(searchTerm: "coffee", description: "Purchase a chai latte.", imageName: "lattePic"),
-            Task(searchTerm: "riverwalk", description: "Find a view of the Detroit River on foot.", imageName: "detWalkingPathPic"),
+            Task(searchTerm: "river walk", description: "Find a view of the Detroit River on foot.", imageName: "detWalkingPathPic"),
             Task(searchTerm: "pizza", description: "Eat local pizza.", imageName: "nikisDetPizzaPic"),
             Task(searchTerm: "park", description: "Have a treat in a park.", imageName: "detRiverfrontPic"),
             Task(searchTerm: "seafood", description: "Try seafood dish.", imageName: "salmonDishPic"),
             Task(searchTerm: "empanada", description: "Try an Empanada.", imageName: "empanadaPic"),
-            Task(searchTerm: "midway", description: "Enjoy bumper cars.", imageName: "midwayBumperPic"),
-            Task(searchTerm: "mural", description: "Explore the city's street art.", imageName: "streetArtPic"),
+            Task(searchTerm: "skating rinks", description: "Enjoy bumper cars.", imageName: "midwayBumperPic"),
+            Task(searchTerm: "icecream", description: "Have a scoop or two.", imageName: "iceCreamPic"),
+            Task(searchTerm: "cocktails", description: "Grab a drink. (N/A or with Alcohol", imageName: "drinkPic"),
+            Task(searchTerm: "public art", description: "Explore the city's street art.", imageName: "streetArtPic"),
+            Task(searchTerm: "golf", description: "Get a few swings in.", imageName: "indoorGolfPic"),
             Task(searchTerm: "greek", description: "Have some greek food.", imageName: "greekFoodPic"),
             Task(searchTerm: "taco", description: "Have a taco...or three.", imageName: "tacosPic"),
             Task(searchTerm: "park", description: "Have lunch in a park.", imageName: "detRiverfrontPic"),
             Task(searchTerm: "coney", description: "Try a Detroit style Coney.", imageName: "coneyDogPic"),
-            Task(searchTerm: "midway", description: "Go get some buckets.", imageName: "midwayHoopPic"),
+            Task(searchTerm: "skating rinks", description: "Go get some buckets.", imageName: "midwayHoopPic"),
             Task(searchTerm: "bakery", description:  "Enjoy a treat from a bakery.", imageName: "bakedTreatsPic"),
-            Task(searchTerm: "midway", description: "Go roller skating.", imageName: "rollerSkatingPic"),
+            Task(searchTerm: "skating rinks", description: "Go roller skating.", imageName: "rollerSkatingPic"),
         ]
         self.updateMapRegion(district: districts.first!)
     }
