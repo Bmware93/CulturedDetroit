@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2D97312A3B94AA00C665BE /* BusinessDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D97302A3B94AA00C665BE /* BusinessDetailView.swift */; };
 		1A42B21E2A3118D700111344 /* BottomDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42B21D2A3118D700111344 /* BottomDrawerView.swift */; };
 		1A42B2202A3118EF00111344 /* SegmentedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42B21F2A3118EF00111344 /* SegmentedPickerView.swift */; };
 		1A42B2242A311A1D00111344 /* PendingTaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42B2232A311A1D00111344 /* PendingTaskListView.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A2D97302A3B94AA00C665BE /* BusinessDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailView.swift; sourceTree = "<group>"; };
 		1A42B21D2A3118D700111344 /* BottomDrawerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomDrawerView.swift; sourceTree = "<group>"; };
 		1A42B21F2A3118EF00111344 /* SegmentedPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedPickerView.swift; sourceTree = "<group>"; };
 		1A42B2232A311A1D00111344 /* PendingTaskListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTaskListView.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				1A42B2232A311A1D00111344 /* PendingTaskListView.swift */,
 				1A42B2252A311A7300111344 /* CompletedTasksView.swift */,
 				1A42B2272A311AAA00111344 /* DetroitDialView.swift */,
+				1A2D97302A3B94AA00C665BE /* BusinessDetailView.swift */,
 				1AB818F92A17B92E006E99A8 /* DestinationsViewModel */,
 				1AB818F32A155F8D006E99A8 /* Models */,
 			);
@@ -357,6 +360,7 @@
 				1AB818F62A170BFF006E99A8 /* DestinationDataService.swift in Sources */,
 				1AB818EF2A154939006E99A8 /* MapView.swift in Sources */,
 				1AB818C42A1547AE006E99A8 /* CulturedUiApp.swift in Sources */,
+				1A2D97312A3B94AA00C665BE /* BusinessDetailView.swift in Sources */,
 				1A42B2202A3118EF00111344 /* SegmentedPickerView.swift in Sources */,
 				1AB818F22A155F83006E99A8 /* Models.swift in Sources */,
 				1A42B2282A311AAA00111344 /* DetroitDialView.swift in Sources */,
@@ -515,7 +519,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CulturedUi/Preview Content\"";
-				DEVELOPMENT_TEAM = UUFQ8XM5Q7;
+				DEVELOPMENT_TEAM = KY5FDC9N4H;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -554,7 +558,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CulturedUi/Preview Content\"";
-				DEVELOPMENT_TEAM = UUFQ8XM5Q7;
+				DEVELOPMENT_TEAM = KY5FDC9N4H;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

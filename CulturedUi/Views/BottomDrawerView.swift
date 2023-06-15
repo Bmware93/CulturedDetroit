@@ -26,7 +26,9 @@ struct BottomDrawerView: View {
                     CapsuleView()
 
                     // MARK: Actual PickerButton
-                    SegmentedPickerView(vm: _vm)
+                    SegmentedPickerView(vm: _vm) {
+                        offSet = UIScreen.main.bounds.height - minHeight
+                    }
                         
 
 

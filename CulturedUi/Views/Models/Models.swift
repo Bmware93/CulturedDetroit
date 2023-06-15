@@ -24,7 +24,13 @@ struct District: Identifiable {
 struct Destination: Identifiable, Codable {
     var id: String
     let name: String
+    var image_url: URL?
     let coordinates: DestionationCoordinates
+    var review_count: Int
+    var rating: Double
+    var location: Businesslocation
+    var display_phone: String
+ 
     
     var clCoordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
@@ -34,6 +40,14 @@ struct Destination: Identifiable, Codable {
 struct DestionationCoordinates: Codable {
     var latitude: Double
     var longitude: Double
+}
+
+struct Businesslocation: Codable {
+    var address1: String
+    var city: String
+    var zip_code: String
+    var state: String
+//    var display_address: [String]?
 }
 
 

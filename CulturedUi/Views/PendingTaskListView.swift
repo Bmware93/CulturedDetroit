@@ -10,6 +10,8 @@ import SwiftUI
 struct PendingTaskListView: View {
     @EnvironmentObject var vm: DestinationsViewModel
     @ScaledMetric var fontSize: CGFloat = 15 // Default font size
+    let searchCompletion: () -> Void
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -33,6 +35,7 @@ struct PendingTaskListView: View {
                                         do {
                                             
                                             try await vm.businesses(searchingFor: task.searchTerm, at: vm.mapRegion.center)
+                                            searchCompletion()
                                         } catch {
                                             print(error.localizedDescription)
                                         }
@@ -64,7 +67,7 @@ struct PendingTaskListView: View {
 
 struct PendingTaskListView_Previews: PreviewProvider {
     static var previews: some View {
-        PendingTaskListView()
+        PendingTaskListView(searchCompletion: {})
             .environmentObject(DestinationsViewModel())
     }
 }

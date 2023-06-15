@@ -29,16 +29,16 @@ struct AnnotationView: View {
                 .foregroundColor(.gray)
                 .offset(x: 0, y: -5)
         }
-        .onTapGesture {
-            withAnimation(.easeInOut) {
-                showTitle.toggle()
-            }
-        }
+//        .onTapGesture {
+//            withAnimation(.easeInOut) {
+//                showTitle.toggle()
+//            }
+//        }
     }
 }
 
 struct AnnotationView_Previews: PreviewProvider {
     static var previews: some View {
-        AnnotationView(destination: Destination(id: "123", name: "Pizza Cat", coordinates: DestionationCoordinates(latitude: 0.0, longitude: 0.0)))
+        AnnotationView(destination: Destination(id: "123", name: "Pizza Cat", coordinates: DestionationCoordinates(latitude: 0.0, longitude: 0.0), review_count: 123, rating: 2.3, location: Businesslocation(address1: "123", city: "Det", zip_code: "48204", state: "MI"), display_phone: "123-123-1234"))
     }
 }

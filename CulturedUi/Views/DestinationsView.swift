@@ -13,6 +13,13 @@ struct DestinationsView: View {
     
     @EnvironmentObject  var vm: DestinationsViewModel
     @StateObject  var locationManager = LocationManager()
+    
+    // if the http request fails, we'll show an alert with the error reason
+    @State private var isShowingErrorAlert = false
+    @State private var errorAlertText = ""
+    
+    // if we have tapped on a map annotation, we'll pass a Business instance here, and our sheet will show us the details
+    @State private var detailBusiness: Destination?
 
     var body: some View {
         // MARK: MAPVIEW and Drop Menu
@@ -22,25 +29,25 @@ struct DestinationsView: View {
                 destination in
                 MapAnnotation(coordinate: destination.clCoordinate) {
                     VStack {
-//                        Button {
+                        Button {
                             // if we tap on a business, pass the business to this property so our sheet will show
-                           //AnnotationView = destination
-//                        } label: {
+                           detailBusiness = destination
+                        } label: {
                             AnnotationView(destination: destination)
-//                        }
-//                        .buttonStyle(.borderless)
-//                        //.buttonBorderShape(.capsule)
+                        }
+
                         
 //                        Text(destination.name)
 //                            .font(.caption2)
                             
                     }
+  
                    
-                    
                 }
 
             }
                 .ignoresSafeArea()
+        
             
             VStack(spacing: 0) {
                 dropMenu
@@ -70,6 +77,14 @@ struct DestinationsView: View {
             }
             BottomDrawerView()
         }
+        
+        // the .sheet(item:) call allows us to only show the sheet if we've passed a business to the detailBusiness property.
+        .sheet(item: $detailBusiness, content: { business in
+            BusinessDetailView(destination: business)
+                .presentationDragIndicator(.visible)
+                .presentationDetents([.medium])
+        })
+
     }
 }
 
