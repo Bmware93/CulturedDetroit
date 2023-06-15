@@ -14,33 +14,34 @@ struct PendingTaskListView: View {
         NavigationView {
             VStack {
                 ScrollView {
-                    ForEach(vm.tasks, id: \.self) { task in
+                    ForEach(vm.tasks.indices, id: \.self) { index in
                         HStack(alignment: .center) {
-                            Image(task.imageName)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .cornerRadius(10)
-                                .frame(width: 150, height: 150)
-                                .padding(.trailing)
-                                .shadow(radius: 3 , x: 2, y: 2)
+                            #warning("the index has no member for imageName")
+//                            Image(index.imageName)
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .cornerRadius(10)
+//                                .frame(width: 150, height: 150)
+//                                .padding(.trailing)
+//                                .shadow(radius: 3 , x: 2, y: 2)
                             VStack(alignment: .leading) {
-                                Text(task.description)
+                                Text(index.description)
                                     .font(.system(size: fontSize))
 
                                     .minimumScaleFactor(0.5) // Adjust as needed
                                     .lineLimit(1)
                                 
                                 Button {
-                                    _Concurrency.Task {
-                                        do {
-                                            
-                                            try await vm.businesses(searchingFor: task.searchTerm, at: vm.mapRegion.center)
-                                        } catch {
-                                            print(error.localizedDescription)
-                                        }
-                                        
-                                    }
-                                    
+//                                    _Concurrency.Task {
+//                                        do {
+                                    #warning("index isn't working with the search term input for the api call.")
+//                                            try await vm.businesses(searchingFor: task.searchTerm, at: vm.mapRegion.center)
+//                                        } catch {
+//                                            print(error.localizedDescription)
+//                                        }
+//
+//                                    }
+                                    vm.completeTask(index: index)
                                 } label: {
                                     Text("Search")
 

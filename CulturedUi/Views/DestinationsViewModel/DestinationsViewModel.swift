@@ -9,12 +9,48 @@ import Foundation
 import SwiftUI
 import MapKit
 
+
+///This class allows us to write/read any of our models to/from the app's documents directory.
+final class DirectoryService {
+    public static func readModelFromDisk<T: Decodable>() -> [T] {
+        do {
+            let directory = try FileManager.default
+                .url(for: .documentDirectory,
+                     in: .userDomainMask,
+                     appropriateFor: nil,
+                     create: false)
+            let encodedModels = try Data(contentsOf: directory.appendingPathComponent("\(T.self).json"))
+            let decodedModels = try JSONDecoder()
+                .decode([T].self, from: encodedModels)
+            return decodedModels
+        } catch {
+            debugPrint(error)
+            return []
+        }
+    }
+    
+    public static func writeModelToDisk<T:Encodable>(_ models: [T]) {
+        do {
+            let directory = try FileManager.default
+                .url(for: .documentDirectory,
+                     in: .userDomainMask,
+                     appropriateFor: nil,
+                     create: false)
+            try JSONEncoder()
+                .encode(models)
+                .write(to: directory.appendingPathComponent("\(T.self).json"))
+        } catch {
+            debugPrint(error)
+        }
+    }
+}
+
 class DestinationsViewModel: ObservableObject {
     
     //All loaded locations
     @Published var destinations: [Destination]
     @Published var tasks: [Task]
-    @Published var completedTasks: [Task] = []
+    //    @Published var completedTasks: [Task] = []
     
     @Published var districts:[District] = [
         
@@ -60,16 +96,17 @@ class DestinationsViewModel: ObservableObject {
             Task(searchTerm: "Riverwalk", description: "Enjoy a walk along the river.", imageName: "detWalkingPathPic"),
         ]
         self.updateMapRegion(district: districts.first!)
+        loadData()
     }
     
     @MainActor
-    //Function that calls the API 
+    //Function that calls the API
     func businesses(searchingFor term: String, at location: CLLocationCoordinate2D) async throws {
         let destinations = try await YelpFusionAPIService().businesses(searchingFor: term, at: location)
         
         self.destinations = destinations
     }
-
+    
     
     private func updateMapRegion(district: District) {
         withAnimation(.easeInOut) {
@@ -78,7 +115,7 @@ class DestinationsViewModel: ObservableObject {
         }
     }
     
-     func toggleDistrictsList() {
+    func toggleDistrictsList() {
         withAnimation(.easeInOut) {
             showZonesList.toggle()
         }
@@ -94,46 +131,42 @@ class DestinationsViewModel: ObservableObject {
         }
     }
     
-    func completeTask(task: Task) {
-        if let index = tasks.firstIndex(of: task) {
-            var task = task
-            task.isCompleted = true
-            tasks.remove(at: index)
-            completedTasks.append(task)
-            // save [task] to filepath
-            progress = Double(completedTasks.count) / Double(completedTasks.count + tasks.count)
-        }
+    func completeTask(index: Int) {
+        var task = tasks[index]
+        task.isCompleted = true
+        tasks[index] = task
+        saveData()
+        
+    }
+    
+    //    Create a property that filters out a completed task from a pending one
+    var isCompleted: [Task] {
+        return tasks.filter { $0.isCompleted }
     }
     
     func restartProgress() {
-        tasks.append(contentsOf: completedTasks)
-        completedTasks.removeAll()
-        for index in tasks.indices {
-            tasks[index].isCompleted = false
-        }
-        objectWillChange.send()
+        DirectoryService.writeModelToDisk([Task]())
+        loadData()
+    }
+    
+    var progressPercentage: Double {
+        //        Create a guard statement that allow us to make a conditional for if a tasks is completed.
         
-        saveData()
+        let completedTasks: [Task] = tasks.filter { $0.isCompleted }
+        
+        return Double(completedTasks.count) / Double(tasks.count)
     }
     
     private func saveData() {
-        do {
-            let encoder = JSONEncoder()
-            let data = try encoder.encode(completedTasks)
-            UserDefaults.standard.set(data, forKey: "CompletedActivities")
-        } catch {
-            print("Error saving data: \(error)")
-        }
+        DirectoryService.writeModelToDisk(tasks)
     }
     
     private func loadData() {
-        do {
-            if let data = UserDefaults.standard.data(forKey: "CompletedActivities") {
-                let decoder = JSONDecoder()
-                completedTasks = try decoder.decode([Task].self, from: data)
-            }
-        } catch {
-            print("Error loading data: \(error)")
+        let tasks: [Task] = DirectoryService.readModelFromDisk() as [Task]
+        if tasks.isEmpty {
+            self.tasks = Task.tasks
+            return
         }
+        self.tasks = tasks
     }
 }

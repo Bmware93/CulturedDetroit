@@ -13,7 +13,7 @@ struct CompletedTasksView: View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(vm.completedTasks, id: \.self) { task in
+                    ForEach(vm.tasks, id: \.self) { task in
                         HStack {
                             Text(task.description)
                         }

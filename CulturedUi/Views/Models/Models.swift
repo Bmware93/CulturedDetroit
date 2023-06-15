@@ -50,24 +50,24 @@ struct Task: Identifiable, Hashable, Codable {
         self.searchTerm = searchTerm
         self.imageName = imageName
     }
-        
-//        init(from decoder: Decoder) throws {
-//            let container = try decoder.container(keyedBy: CodingKeys.self)
-//            self.searchTerm = try container.decode(String.self, forKey: .searchTerm)
-//            self.description = try container.decode(String.self, forKey: .description)
-//            self.imageName = try container.decode(String.self, forKey: .imageName)
-//            self.isCompleted = try container.decode(Bool.self, forKey: .isCompleted)
-//        }
     
-    static func load() -> [Task] {
-        return [
-            Task(searchTerm: "Pizza", description: "Eat pizza from a local restaurant.", imageName: "nikisDetPizzaPic"),
-            Task(searchTerm: "Coffee", description: "Purchase a chai latte.", imageName: "lattePic"),
-            Task(searchTerm: "Seafood", description: "Try seafood dish.", imageName: "salmonDishPic"),
-            Task(searchTerm: "Riverwalk", description: "Enjoy a walk along the river.", imageName: "detWalkingPathPic")
-        ]
-    }
+    static let tasks = [
+        Task(searchTerm: "Pizza", description: "Eat local pizza.", imageName: "nikisDetPizzaPic"),
+        Task(searchTerm: "Coffee", description: "Purchase a chai latte.", imageName: "lattePic"),
+        Task(searchTerm: "Seafood", description: "Try seafood dish.", imageName: "salmonDishPic"),
+        Task(searchTerm: "Riverwalk", description: "Enjoy a walk along the river.", imageName: "detWalkingPathPic"),
+        Task(searchTerm: "Pizza", description: "Eat pizza from a local restaurant.", imageName: "nikisDetPizzaPic"),
+        Task(searchTerm: "Coffee", description: "Purchase a chai latte.", imageName: "lattePic"),
+        Task(searchTerm: "Seafood", description: "Try seafood dish.", imageName: "salmonDishPic"),
+        Task(searchTerm: "Riverwalk", description: "Enjoy a walk along the river.", imageName: "detWalkingPathPic"),
+        Task(searchTerm: "Pizza", description: "Eat pizza from a local restaurant.", imageName: "nikisDetPizzaPic"),
+        Task(searchTerm: "Coffee", description: "Purchase a chai latte.", imageName: "lattePic"),
+        Task(searchTerm: "Seafood", description: "Try seafood dish.", imageName: "salmonDishPic"),
+        Task(searchTerm: "Riverwalk", description: "Enjoy a walk along the river.", imageName: "detWalkingPathPic"),
+    ]
+    
 }
+
 
 enum DistrictAreas: String, CaseIterable {
     case capitolPark = "Capital Park"
