@@ -9,11 +9,11 @@ import SwiftUI
 
 struct PendingTaskListView: View {
     @EnvironmentObject var vm: DestinationsViewModel
-    @ScaledMetric var fontSize: CGFloat = 12 // Default font size
+    @ScaledMetric var fontSize: CGFloat = 15 // Default font size
     var body: some View {
-//        NavigationView {
-            VStack(alignment: .leading) {
-                ScrollView {
+        NavigationView {
+            ScrollView {
+                VStack(alignment: .leading) {
                     ForEach(vm.tasks, id: \.self) { task in
                         HStack(alignment: .center, spacing: 30) {
                             Image(task.imageName)
@@ -22,14 +22,10 @@ struct PendingTaskListView: View {
                                 .cornerRadius(10)
                                 .frame(width: 170, height: 170)
                                 .shadow(radius: 3 , x: 2, y: 2)
-                            VStack {
+                            VStack(alignment: .leading) {
                                 Text(task.description)
                                     .font(.system(size: fontSize))
-                                    .multilineTextAlignment(.leading)
-                                    .frame(maxWidth: .infinity)
-                                    .padding(.trailing, 60)
-
-//                                    .minimumScaleFactor(2.5) // Adjust as needed
+                                    .minimumScaleFactor(2.5) // Adjust as needed
                                     .lineLimit(3)
                                 
                                 Button {
@@ -48,18 +44,19 @@ struct PendingTaskListView: View {
                                         .font(.system(size: fontSize))
                                         .minimumScaleFactor(0.5) // Adjust as needed
                                         .lineLimit(1)
-                                    
                                 }
                             }
                             .buttonStyle(.borderedProminent)
                             .shadow(radius: 3 , x: 2, y: 2)
+                            //                            .padding(.trailing)
                         }
                         .padding(.leading)
                     }
                 }
-//                .navigationTitle("Activities")
             }
-//        }
+            .navigationBarTitle("Activities")
+        }
+        
     }
 }
 

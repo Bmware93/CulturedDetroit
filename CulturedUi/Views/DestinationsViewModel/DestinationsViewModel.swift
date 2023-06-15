@@ -51,12 +51,12 @@ class DestinationsViewModel: ObservableObject {
             Task(searchTerm: "empanada", description: "Try an Empanada.", imageName: "empanadaPic"),
             Task(searchTerm: "midway", description: "Enjoy bumper cars.", imageName: "midwayBumperPic"),
             Task(searchTerm: "mural", description: "Explore the city's street art.", imageName: "streetArtPic"),
-            Task(searchTerm: "greek", description: "Have some greek food.", imageName: ""),
+            Task(searchTerm: "greek", description: "Have some greek food.", imageName: "greekFoodPic"),
             Task(searchTerm: "taco", description: "Have a taco...or three.", imageName: "tacosPic"),
             Task(searchTerm: "park", description: "Have lunch in a park.", imageName: "detRiverfrontPic"),
             Task(searchTerm: "coney", description: "Try a Detroit style Coney.", imageName: "coneyDogPic"),
             Task(searchTerm: "midway", description: "Go get some buckets.", imageName: "midwayHoopPic"),
-            Task(searchTerm: "bakery", description:  "Enjoy a treat from a bakery.", imageName: "bakeTreatPic"),
+            Task(searchTerm: "bakery", description:  "Enjoy a treat from a bakery.", imageName: "bakedTreatsPic"),
             Task(searchTerm: "midway", description: "Go roller skating.", imageName: "rollerSkatingPic"),
         ]
         self.updateMapRegion(district: districts.first!)
