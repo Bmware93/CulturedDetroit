@@ -17,7 +17,7 @@ struct SegmentedPickerView: View {
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
-            
+            .padding(.horizontal)            
             if vm.selectedViewCategory == .activities {
                 PendingTaskListView(vm: _vm)
                     .padding(.top, 0)
