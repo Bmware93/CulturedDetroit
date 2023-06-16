@@ -30,6 +30,7 @@
 		1AB818F82A17A883006E99A8 /* DestinationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB818F72A17A883006E99A8 /* DestinationsView.swift */; };
 		1AB818FB2A17B954006E99A8 /* DestinationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB818FA2A17B954006E99A8 /* DestinationsViewModel.swift */; };
 		1AB818FD2A17F73A006E99A8 /* DropMenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB818FC2A17F73A006E99A8 /* DropMenuListView.swift */; };
+		5D665FAE2A3CCDF2008F149F /* SearchButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D665FAD2A3CCDF2008F149F /* SearchButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		1AB818F72A17A883006E99A8 /* DestinationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationsView.swift; sourceTree = "<group>"; };
 		1AB818FA2A17B954006E99A8 /* DestinationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationsViewModel.swift; sourceTree = "<group>"; };
 		1AB818FC2A17F73A006E99A8 /* DropMenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropMenuListView.swift; sourceTree = "<group>"; };
+		5D665FAD2A3CCDF2008F149F /* SearchButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				1AB818F72A17A883006E99A8 /* DestinationsView.swift */,
 				1AB818FC2A17F73A006E99A8 /* DropMenuListView.swift */,
 				1A4C09A22A291E9B0052B582 /* AnnotationView.swift */,
+				5D665FAD2A3CCDF2008F149F /* SearchButtonView.swift */,
 				1A42B21D2A3118D700111344 /* BottomDrawerView.swift */,
 				1A42B21F2A3118EF00111344 /* SegmentedPickerView.swift */,
 				1A42B2232A311A1D00111344 /* PendingTaskListView.swift */,
@@ -347,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D665FAE2A3CCDF2008F149F /* SearchButtonView.swift in Sources */,
 				1A4C09A12A213EB90052B582 /* APIKeys.swift in Sources */,
 				1A4C09A32A291E9B0052B582 /* AnnotationView.swift in Sources */,
 				1AB818FB2A17B954006E99A8 /* DestinationsViewModel.swift in Sources */,

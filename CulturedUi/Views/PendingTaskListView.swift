@@ -30,28 +30,8 @@ struct PendingTaskListView: View {
                                     .minimumScaleFactor(2.5) // Adjust as needed
                                     .lineLimit(3)
                                 
-                                Button {
-                                    _Concurrency.Task {
-                                        do {
-                                            
-                                            try await vm.businesses(searchingFor: task.searchTerm, at: vm.mapRegion.center)
-                                            searchCompletion()
-                                        } catch {
-                                            print(error.localizedDescription)
-                                        }
-                                        
-                                    }
-                                    
-                                } label: {
-                                    Text("Search")
-                                        .font(.system(size: fontSize))
-                                        .minimumScaleFactor(0.5) // Adjust as needed
-                                        .lineLimit(1)
-                                }
+                                SearchButtonView(task: task, searchCompletion: searchCompletion)
                             }
-                            .buttonStyle(.borderedProminent)
-                            .shadow(radius: 3 , x: 2, y: 2)
-                            //                            .padding(.trailing)
                         }
                         .padding(.leading)
                     }
