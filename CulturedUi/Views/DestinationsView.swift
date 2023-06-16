@@ -33,7 +33,7 @@ struct DestinationsView: View {
                             // if we tap on a business, pass the business to this property so our sheet will show
                            detailBusiness = destination
                         } label: {
-                            AnnotationView(destination: destination)
+                            CustomCulturedPin()
                         }
 
                         
