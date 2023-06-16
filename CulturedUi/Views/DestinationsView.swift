@@ -106,7 +106,7 @@ extension DestinationsView {
                         .font(.system(size: 35))
                         .minimumScaleFactor(0.5)
                         .fontWeight(.medium)
-                        .foregroundColor(.black)
+                        .foregroundColor(.primary)
                         .frame(height: 56)
                         .frame(maxWidth: .infinity)
                         .padding(.leading, 54)
