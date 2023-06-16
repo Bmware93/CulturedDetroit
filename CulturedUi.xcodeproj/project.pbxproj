@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A160FD92A3CEB7D004151D7 /* CustomCulturedPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A160FD82A3CEB7D004151D7 /* CustomCulturedPin.swift */; };
 		1A2D97312A3B94AA00C665BE /* BusinessDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D97302A3B94AA00C665BE /* BusinessDetailView.swift */; };
 		1A42B21E2A3118D700111344 /* BottomDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42B21D2A3118D700111344 /* BottomDrawerView.swift */; };
 		1A42B2202A3118EF00111344 /* SegmentedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42B21F2A3118EF00111344 /* SegmentedPickerView.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A160FD82A3CEB7D004151D7 /* CustomCulturedPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCulturedPin.swift; sourceTree = "<group>"; };
 		1A2D97302A3B94AA00C665BE /* BusinessDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailView.swift; sourceTree = "<group>"; };
 		1A42B21D2A3118D700111344 /* BottomDrawerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomDrawerView.swift; sourceTree = "<group>"; };
 		1A42B21F2A3118EF00111344 /* SegmentedPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedPickerView.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				1AB818F72A17A883006E99A8 /* DestinationsView.swift */,
 				1AB818FC2A17F73A006E99A8 /* DropMenuListView.swift */,
 				1A4C09A22A291E9B0052B582 /* AnnotationView.swift */,
+				1A160FD82A3CEB7D004151D7 /* CustomCulturedPin.swift */,
 				5D665FAD2A3CCDF2008F149F /* SearchButtonView.swift */,
 				1A42B21D2A3118D700111344 /* BottomDrawerView.swift */,
 				1A42B21F2A3118EF00111344 /* SegmentedPickerView.swift */,
@@ -363,6 +366,7 @@
 				1A4C099F2A213E7A0052B582 /* YelpFusionAPIService.swift in Sources */,
 				1AB818F62A170BFF006E99A8 /* DestinationDataService.swift in Sources */,
 				1AB818EF2A154939006E99A8 /* MapView.swift in Sources */,
+				1A160FD92A3CEB7D004151D7 /* CustomCulturedPin.swift in Sources */,
 				1AB818C42A1547AE006E99A8 /* CulturedUiApp.swift in Sources */,
 				1A2D97312A3B94AA00C665BE /* BusinessDetailView.swift in Sources */,
 				1A42B2202A3118EF00111344 /* SegmentedPickerView.swift in Sources */,
