@@ -95,6 +95,7 @@ struct BusinessDetailView: View {
                 Spacer()
             } else {
                 Button {
+                    // MARK: Place completeTask Function here
 //                    switchButton()
                 }label: {
                     Text("Complete")
