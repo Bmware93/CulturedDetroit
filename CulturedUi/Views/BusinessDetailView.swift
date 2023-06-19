@@ -11,6 +11,8 @@ import SwiftUI
 struct BusinessDetailView: View {
     var destination: Destination
     
+    @State private var button = true
+    
     var body: some View {
         NavigationStack {
             
@@ -21,16 +23,16 @@ struct BusinessDetailView: View {
                     image.image?.resizable()
                 }
                 .frame(width: 350, height: 250)
-                    .scaledToFit()
-                    .cornerRadius(10)
-                    .padding()
-                    .aspectRatio( contentMode: .fit)
+                .scaledToFit()
+                .cornerRadius(10)
+                .padding()
+                .aspectRatio( contentMode: .fit)
                 
-               
+                
                 HStack {
                     Text(destination.name)
-                            .padding(.horizontal)
-                            .font(.title2)
+                        .padding(.horizontal)
+                        .font(.title2)
                         .bold()
                     
                     Spacer()
@@ -58,8 +60,8 @@ struct BusinessDetailView: View {
                 HStack {
                     Image(systemName: "phone")
                         .font(.headline)
-                    .padding(.leading)
-                  
+                        .padding(.leading)
+                    
                     
                     Text(destination.display_phone)
                 }
@@ -68,22 +70,46 @@ struct BusinessDetailView: View {
                 
                 
                 
-                        
+                
                 Spacer()
                 
             }
-            Button {
-                
-            }label: {
-              Text("Start Journey")
+            
+            //            if button {
+            //                Button("Click Me!") {
+            //                    switchButton()
+            //                }
+            //            } else {
+            //                Button("New Button!") {
+            //                    // Action for the new button
+            //                    print("You pressed the new button!")
+            //                }
+            if button {
+                Button {
+                    switchButton()
+                }label: {
+                    Text("Start Journey")
+                }
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.roundedRectangle)
+                Spacer()
+            } else {
+                Button {
+//                    switchButton()
+                }label: {
+                    Text("Complete")
+                }
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.roundedRectangle)
             }
-            .buttonStyle(.borderedProminent)
-            .buttonBorderShape(.roundedRectangle)
         }
-        
     }
-    
+    func switchButton() {
+        button = false
+    }
 }
+
+
 
 struct BusinessDetailView_Previews: PreviewProvider {
     static var previews: some View {
