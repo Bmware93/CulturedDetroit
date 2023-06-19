@@ -35,6 +35,19 @@ struct Destination: Identifiable, Codable {
     var clCoordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
     }
+    
+  public func launchNavigationToAppleMaps() {
+        let placemark = MKPlacemark(coordinate: clCoordinate)
+        let mapItem = MKMapItem(placemark: placemark)
+        
+        // Set the destination name (optional)
+        mapItem.name = name
+        
+        // Set the launch options for navigation
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        mapItem.openInMaps(launchOptions: launchOptions)
+    }
+
 }
 
 struct DestionationCoordinates: Codable {
@@ -49,6 +62,16 @@ struct Businesslocation: Codable {
     var state: String
 //    var display_address: [String]?
 }
+
+//struct DestinationViewModel {
+// var destination: Destination? // Holds the fetched destination data
+//    
+//    // Function to fetch destination data from the API
+//   func fetchDestinationData() {
+//        // Code to fetch destination data from Yelp Fusion API
+//        // Assign the fetched destination data to self.destination
+//    }
+//}
 
 
 struct Task: Identifiable, Hashable, Codable {

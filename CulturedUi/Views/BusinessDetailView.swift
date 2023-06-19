@@ -73,7 +73,7 @@ struct BusinessDetailView: View {
                 
             }
             Button {
-                
+                destination.launchNavigationToAppleMaps()
             }label: {
               Text("Start Journey")
             }

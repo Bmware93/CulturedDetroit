@@ -84,6 +84,14 @@ struct DestinationsView: View {
                 .presentationDragIndicator(.visible)
                 .presentationDetents([.medium])
         })
+        
+        .alert(isPresented: $isShowingErrorAlert) {
+                   Alert(
+                       title: Text("Error"),
+                       message: Text(errorAlertText),
+                       dismissButton: .default(Text("OK"))
+                   )
+               }
 
     }
 }
