@@ -10,7 +10,6 @@ import SwiftUI
 import MapKit
 
 class DestinationsViewModel: ObservableObject {
-    
     //All loaded locations
     @Published var destinations: [Destination]
     @Published var tasks: [Task]
@@ -35,6 +34,7 @@ class DestinationsViewModel: ObservableObject {
     
     @Published var progress: Double = 0
     @Published var selectedViewCategory: ViewCategories = .activities
+    @Published var detailBusiness: Destination?
     
     init() {
         let districts = DestinationDataService.districts
@@ -69,6 +69,12 @@ class DestinationsViewModel: ObservableObject {
     //Function that calls the API 
     func businesses(searchingFor term: String, at location: CLLocationCoordinate2D) async throws {
         let destinations = try await YelpFusionAPIService().businesses(searchingFor: term, at: location)
+        
+        DispatchQueue.main.async {
+            if let firstDestination = destinations.first {
+                self.detailBusiness = firstDestination
+            }
+        }
         
         self.destinations = destinations
     }
