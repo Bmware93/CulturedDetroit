@@ -10,6 +10,7 @@ import SwiftUI
 
 struct BusinessDetailView: View {
     var destination: Destination
+    @EnvironmentObject var vm: DestinationsViewModel
     
     @State private var button = true
     
@@ -95,8 +96,7 @@ struct BusinessDetailView: View {
                 Spacer()
             } else {
                 Button {
-                    // MARK: Place completeTask Function here
-//                    switchButton()
+                    // MARK: Place completeTask Function here 
                 }label: {
                     Text("Complete")
                 }
@@ -115,5 +115,6 @@ struct BusinessDetailView: View {
 struct BusinessDetailView_Previews: PreviewProvider {
     static var previews: some View {
         BusinessDetailView(destination: Destination(id: "123", name: "Parc Detroit", coordinates: DestionationCoordinates(latitude: 0.0, longitude: 0.0 ), review_count: 123, rating: 5.7, location: Businesslocation(address1: "800 Woodward Ave", city: "Detroit", zip_code: "48204", state: "MI"), display_phone: "(281) 330-8004"))
+            .environmentObject(DestinationsViewModel())
     }
 }
