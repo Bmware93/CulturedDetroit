@@ -12,7 +12,7 @@ struct BusinessDetailView: View {
     var destination: Destination
     @EnvironmentObject var vm: DestinationsViewModel
     
-    @State private var button = true
+    @State private var isReadyToComplete = false
     
     var body: some View {
         NavigationStack {
@@ -85,28 +85,23 @@ struct BusinessDetailView: View {
             //                    // Action for the new button
             //                    print("You pressed the new button!")
             //                }
-            if button {
-                Button {
+            Button {
+                // MARK: Place completeTask Function here
+                if isReadyToComplete {
+                    vm.completeTask(task: Task(searchTerm: "", description: "", imageName: ""))
+                } else {
                     switchButton()
-                }label: {
-                    Text("Start Journey")
                 }
-                .buttonStyle(.borderedProminent)
-                .buttonBorderShape(.roundedRectangle)
-                Spacer()
-            } else {
-                Button {
-                    // MARK: Place completeTask Function here 
-                }label: {
-                    Text("Complete")
-                }
-                .buttonStyle(.borderedProminent)
-                .buttonBorderShape(.roundedRectangle)
+            } label: {
+                Text(isReadyToComplete ? "Complete" : "Start Journey")
             }
+            .buttonStyle(.borderedProminent)
+            .buttonBorderShape(.roundedRectangle)
+            
         }
     }
     func switchButton() {
-        button = false
+        isReadyToComplete = false
     }
 }
 
