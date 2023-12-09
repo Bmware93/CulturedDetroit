@@ -16,6 +16,10 @@ class DestinationsViewModel: ObservableObject {
     @Published var tasks: [Task]
     @Published var completedTasks: [Task] = []
     
+    
+    // MARK: 
+    @Published var isReadyToComplete = false
+    
     @Published var districts:[District] = [
         
     ]
@@ -95,6 +99,10 @@ class DestinationsViewModel: ObservableObject {
             mapLocation = zone
             showZonesList = false
         }
+    }
+    
+    func switchButton() {
+        isReadyToComplete = false
     }
     
     func completeTask(task: Task) {

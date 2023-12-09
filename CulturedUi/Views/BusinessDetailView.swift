@@ -12,7 +12,7 @@ struct BusinessDetailView: View {
     var destination: Destination
     @EnvironmentObject var vm: DestinationsViewModel
     
-    @State private var isReadyToComplete = false
+//    @State private var isReadyToComplete = false
     
     var body: some View {
         NavigationStack {
@@ -87,21 +87,17 @@ struct BusinessDetailView: View {
             //                }
             Button {
                 // MARK: Place completeTask Function here
-                if isReadyToComplete {
+                if vm.isReadyToComplete {
                     vm.completeTask(task: Task(searchTerm: "", description: "", imageName: ""))
                 } else {
-                    switchButton()
+                    vm.switchButton()
                 }
             } label: {
-                Text(isReadyToComplete ? "Complete" : "Start Journey")
+                Text(vm.isReadyToComplete ? "Complete" : "Start Journey")
             }
             .buttonStyle(.borderedProminent)
             .buttonBorderShape(.roundedRectangle)
-            
         }
-    }
-    func switchButton() {
-        isReadyToComplete = false
     }
 }
 
