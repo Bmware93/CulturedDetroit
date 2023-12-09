@@ -18,7 +18,7 @@ struct CompletedTasksView: View {
                     }
                 }
             }
-            .navigationTitle("Completed")
+            .navigationTitle("Visited")
         }
     }
 }
