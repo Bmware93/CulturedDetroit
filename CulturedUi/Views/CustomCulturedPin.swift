@@ -13,7 +13,7 @@ struct CustomCulturedPin: View {
             Image("customPin")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 100, height: 100)
+                .frame(width: 150, height: 100)
         }
     }
 }
