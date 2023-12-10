@@ -66,7 +66,7 @@ struct BusinessDetailView: View {
                 
                 
                 
-                
+
                 
                         
                 Spacer()
